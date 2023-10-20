@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ede7ca0b6ee16f4c9ed6581cf8afbbf, type: 3}
+  m_Name: MineConfig_Res
+  m_EditorClassIdentifier: 
+  dataList:
+  - Id: 1
+    Name: "\u767D\u94F6\u77FF"
+    Probability: 6000
+    CoinMax: 1000000
+    DropCoin: b80b000070170000
+    DropItem: 160004
+  - Id: 2
+    Name: "\u9EC4\u91D1\u77FF"
+    Probability: 3000
+    CoinMax: 2000000
+    DropCoin: 8813000010270000
+    DropItem: 160005
+  - Id: 3
+    Name: "\u94BB\u77F3\u77FF"
+    Probability: 1000
+    CoinMax: 5000000
+    DropCoin: 401f0000204e0000
+    DropItem: 160006

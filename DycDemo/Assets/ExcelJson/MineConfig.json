@@ -1,0 +1,1 @@
+﻿{"dataList":[{"Id":1,"Name":"白银矿","Probability":6000,"CoinMax":1000000,"DropCoin":[3000,6000],"DropItem":160004},{"Id":2,"Name":"黄金矿","Probability":3000,"CoinMax":2000000,"DropCoin":[5000,10000],"DropItem":160005},{"Id":3,"Name":"钻石矿","Probability":1000,"CoinMax":5000000,"DropCoin":[8000,20000],"DropItem":160006}]}

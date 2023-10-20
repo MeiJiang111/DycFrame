@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c874ca403e91b5347b6313883b16fbf4, type: 3}
+  m_Name: SeaConfig_Res
+  m_EditorClassIdentifier: 
+  dataList:
+  - Id: 100001
+    Name: "\u4E1C\u6D77"
+    ResourceName: icon_status_ship1
+    SeaAreaType: 1
+    Prosperity: 0
+    ResourceMax: 1000
+    ResourceCircle: 20
+    FishType: 101;102;103;104;105
+    FishReward: 100001
+  - Id: 100002
+    Name: "\u5F53\u524D\u65F6\u65F6\u95F4\u6233"
+    ResourceName: icon_status_ship1
+    SeaAreaType: 2
+    Prosperity: 10
+    ResourceMax: 1000
+    ResourceCircle: 20
+    FishType: 103;104;105;106;107
+    FishReward: 100002
+  - Id: 100003
+    Name: "\u897F\u6D77"
+    ResourceName: icon_status_ship1
+    SeaAreaType: 2
+    Prosperity: 20
+    ResourceMax: 1000
+    ResourceCircle: 20
+    FishType: 103;104;105;108;109
+    FishReward: 100003
+  - Id: 100004
+    Name: "\u5317\u6D77"
+    ResourceName: icon_status_ship1
+    SeaAreaType: 3
+    Prosperity: 30
+    ResourceMax: 1000
+    ResourceCircle: 20
+    FishType: 101;102;105;106;110
+    FishReward: 100004
+  - Id: 100005
+    Name: "\u9EC4\u6D77"
+    ResourceName: icon_status_ship1
+    SeaAreaType: 3
+    Prosperity: 40
+    ResourceMax: 1000
+    ResourceCircle: 20
+    FishType: 103;104;107;108;109
+    FishReward: 100005
+  - Id: 100006
+    Name: "\u6E24\u6D77"
+    ResourceName: icon_status_ship1
+    SeaAreaType: 3
+    Prosperity: 50
+    ResourceMax: 1000
+    ResourceCircle: 20
+    FishType: 103;104;105;106;107
+    FishReward: 100006

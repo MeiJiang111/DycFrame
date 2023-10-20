@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6db18afb277fd40ab5e90c452ffb01, type: 3}
+  m_Name: PanelPrefabsConfig
+  m_EditorClassIdentifier: 
+  configLis:
+  - group: 5
+    type: 2
+    scene: 10
+    name: UpdatePanel
+    isResident: 1
+    preloading: 0
+  - group: 1
+    type: 1
+    scene: 1
+    name: LoginPanel
+    isResident: 0
+    preloading: 0

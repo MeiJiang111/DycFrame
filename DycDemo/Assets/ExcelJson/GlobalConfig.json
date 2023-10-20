@@ -1,0 +1,17 @@
+{
+	"dataList":
+	[
+		{
+			"Id":1,
+			"VisitorShowPer":25,
+			"VisitorShowMax":50,
+			"ResetTime":"5:00",
+			"DurableRecoverCost":1000,
+			"CleanRecoverCost":1000,
+			"OffLineProsperity":5,
+			"OffLineVisitor":100,
+			"OffLineMaxTime":28800
+		}
+	]
+}
+

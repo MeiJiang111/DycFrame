@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8180c266b7358b24692f410221126c7b, type: 3}
+  m_Name: TouristEventsConfig_Res
+  m_EditorClassIdentifier: 
+  dataList:
+  - Id: 1001
+    Description: "\u6E38\u5BA2\u4EEC\u75AF\u72C2\u7684\u4E70\u8D77\u4E86\u7EAA\u5FF5\u54C1"
+    Rewards: '[{"Id":1,"Min":1,"Max":100}]'
+    GenreType: 1
+    Probability: 8
+  - Id: 1002
+    Description: "\u571F\u8C6A\u4E00\u63B7\u5343\u91D1\u4E70\u4E86\u4E00\u4E2A\u96C6\u88C5\u7BB1\u7684\u4E1C\u897F"
+    Rewards: '[{"Id":1,"Min":1,"Max":101}]'
+    GenreType: 1
+    Probability: 8
+  - Id: 1003
+    Description: "\u6E38\u5BA2\u5E26\u6765\u4E86\u5BB6\u4E61\u7684\u7279\u4EA7\u548C\u5C9B\u6C11\u5206\u4EAB"
+    Rewards: '[{"Id":1,"Min":1,"Max":102}]'
+    GenreType: 1
+    Probability: 8
+  - Id: 1004
+    Description: "\u6E38\u5BA2\u6253\u635E\u5230\u4E86\u5927\u738B\u4E4C\u8D3C\uFF0C\u4E0D\u5403\u9001\u7ED9\u5C9B\u6C11\uFF0C\u5C31\u662F\u73A9"
+    Rewards: '[{"Id":1,"Min":1,"Max":103}]'
+    GenreType: 1
+    Probability: 8
+  - Id: 1005
+    Description: "\u5BFC\u6E38\u5BF9\u6E38\u5BA2\u4E00\u89C1\u949F\u60C5\u51B3\u5B9A\u79C1\u5954"
+    Rewards: '[{"Id":6,"Min":1,"Max":0}]'
+    GenreType: 2
+    Probability: 8
+  - Id: 1006
+    Description: "\u7531\u4E8E\u592A\u5F00\u5FC3\u559D\u9189\u7684\u5BFC\u6E38\u4E0D\u5C0F\u5FC3\u6389\u8FDB\u4E86\u6D77\u91CC"
+    Rewards: '[{"Id":1,"Min":1,"Max":0}]'
+    GenreType: 2
+    Probability: 8
+  - Id: 1007
+    Description: "\u6E38\u5BA2\u548C\u5C9B\u6C11\u53D1\u751F\u4E86\u4E89\u6267\uFF0C\u60C5\u6025\u4E4B\u4E0B\u6253\u788E\u4E86\u8239\u575E\u73BB\u7483"
+    Rewards: '[{"Id":7,"Min":1,"Max":11}]'
+    GenreType: 2
+    Probability: 8
+  - Id: 1008
+    Description: "\u6E38\u5BA2\u7231\u4E0A\u4E86\u8FD9\u91CC\u51B3\u5B9A\u7559\u4E0B"
+    Rewards: '[{"Id":5,"Min":1,"Max":3}]'
+    GenreType: 1
+    Probability: 8
+  - Id: 1009
+    Description: "\u6E38\u5BA2\u50CF\u4EB2\u621A\u670B\u53CB\u63A8\u8350\u4E86\u8FD9\u4E2A\u5C0F\u5C9B\u4ED6\u4EEC\u90FD\u60F3\u642C\u8FC7\u6765"
+    Rewards: '[{"Id":5,"Min":1,"Max":6}]'
+    GenreType: 1
+    Probability: 8
+  - Id: 1010
+    Description: "\u6E38\u5BA2\u548C\u5C9B\u6C11\u7ED3\u5A5A\u751F\u4E0B\u4E86\u5B69\u5B50\uFF08\u53EF\u771F\u591F\u5FEB\uFF09"
+    Rewards: '[{"Id":5,"Min":1,"Max":4}]'
+    GenreType: 1
+    Probability: 8

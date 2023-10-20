@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9465de3e990c9c44c9dab2b04df1ef0b, type: 3}
+  m_Name: FisheryConfig_Res
+  m_EditorClassIdentifier: 
+  dataList:
+  - Id: 1
+    Name: "\u79CB\u5200\u9C7C"
+    ExchangeFood: 1
+    Price: 0200000005000000
+    AdvPrice: 1
+    Probability: 6
+    Effectiveness: 5
+  - Id: 2
+    Name: "\u9CA4\u9C7C"
+    ExchangeFood: 1
+    Price: 0300000008000000
+    AdvPrice: 3
+    Probability: 5
+    Effectiveness: 5
+  - Id: 3
+    Name: "\u5E1D\u738B\u87F9"
+    ExchangeFood: 1
+    Price: 050000000f000000
+    AdvPrice: 5
+    Probability: 4
+    Effectiveness: 5
+  - Id: 4
+    Name: "\u4E09\u6587\u9C7C"
+    ExchangeFood: 1
+    Price: 0a0000001e000000
+    AdvPrice: 10
+    Probability: 3
+    Effectiveness: 5
+  - Id: 5
+    Name: "\u91D1\u67AA\u9C7C"
+    ExchangeFood: 1
+    Price: 1400000032000000
+    AdvPrice: 15
+    Probability: 2
+    Effectiveness: 5
+  - Id: 6
+    Name: "\u9CB8"
+    ExchangeFood: 1
+    Price: 3200000064000000
+    AdvPrice: 20
+    Probability: 1
+    Effectiveness: 5

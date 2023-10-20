@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39dfd3832f55c0e44a8b0844d998e878, type: 3}
+  m_Name: TouristCenterConfig_Res
+  m_EditorClassIdentifier: 
+  dataList:
+  - ServiceNeedItem_list: []
+    DurabilityNeedItem_list: []
+    Id: 1
+    ServiceNeedItem: '[{"Id":1,"Num":1000,"Pernum":100},{"Id":2,"Num":500,"Pernum":100},{"Id":5,"Num":10,"Pernum":1}]'
+    EventInterval: 60
+    GuideLimit: 30
+    ReduceTime: 1
+    Durability: 1000
+    DurabilityNeedItem: '[{"Id":1,"Num":100}]'
+    DurabilityNeedTime: 60
+    TouristFoodNum: 1
+    GuideAdd: 1
+    FoodAdd: 10
+    Cdtime: 600
+    Need_minfood: 20
