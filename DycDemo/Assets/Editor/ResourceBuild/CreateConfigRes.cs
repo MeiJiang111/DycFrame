@@ -14,7 +14,7 @@ public class CreateConfigRes
     /// <summary>
     /// 配置文件路径
     /// </summary>
-    private static string configPath = Application.dataPath + "/ExcelJson/";
+    private static string excelJsonPath = Application.dataPath + "/ExcelJson/";
 
     /// <summary>
     /// 生成的Res文件路径
@@ -32,7 +32,7 @@ public class CreateConfigRes
 
     public static void CreateRes()
     {
-        GetAllCongfig(configPath);
+        GetAllCongfig(excelJsonPath);
 
         InitContainers();
 
@@ -47,7 +47,7 @@ public class CreateConfigRes
     {
         filesMap.Clear();
         DirectoryInfo folder = new DirectoryInfo(filePath);
-       
+
         FileInfo[] chldFiles = folder.GetFiles("*.json");
         if (chldFiles.Length > 0)
         {
@@ -56,15 +56,6 @@ public class CreateConfigRes
                 filesMap.Add(fileInfo.Name, fileInfo);
             }
         }
-
-        //获取子文件夹下配置文件 todo
-        /*
-        DirectoryInfo[] chldFolders = folder.GetDirectories();
-        foreach (DirectoryInfo chldFolder in chldFolders)
-        {
-            GetAllCongfig(chldFolder.FullName);
-        }
-        */
     }
 
     private static void InitContainers()
@@ -150,16 +141,10 @@ public class CreateConfigRes
                 AssetDatabase.DeleteAsset(outPath);
                 AssetDatabase.CreateAsset(container, outPath);
                 AssetDatabase.SaveAssets();
-                //InitLanguageCode(obj);
             }
         }
         AssetDatabase.Refresh();
        
         Debug.Log("==== Config文件解析，生成Asset文件完成 ==== ");
-    }
-
-    private static void InitLanguageCode(BaseDataContainer container)
-    {
-
     }
 }

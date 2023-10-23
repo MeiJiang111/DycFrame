@@ -85,7 +85,7 @@ public class OpenClosePanel : MonoBehaviour
 
     private void OpenPanelImple()
     {
-        gameObject.SetActive(true);//  是否需要移动 ui  回头再处理
+        gameObject.SetActive(true);
     }
 
     private void ClosePanelImple()

@@ -29,8 +29,7 @@ public class PanelPrefabConfigBuild
     public static void Build()
     {
         panelPrefabConfigs = ScriptableObject.CreateInstance<PanelPrefabConfigs>();
-        LogUtil.Log("panelPrefabConfigs" + panelPrefabConfigs);
-
+        
         foreach (var item in EditorPath.PANEL_PATHS)
         {
             var prefabs = CollectPanel(item);
@@ -52,20 +51,20 @@ public class PanelPrefabConfigBuild
     {
         var panelList = new List<OpenClosePanel>();
         var prefabs = EditorHelpers.CollectAsset<Transform>(path);
-        foreach (var prefab in prefabs)
+        foreach (var item in prefabs)
         {
-            var panel = prefab.GetComponent<OpenClosePanel>();
+            var panel = item.GetComponent<OpenClosePanel>();
             if (panel != null)
             {
                 panelList.Add(panel);
             }
             else
             {
-                if (prefab.childCount > 0)
+                if (item.childCount > 0)
                 {
-                    for (var i = 0; i < prefab.childCount; ++i)
+                    for (var i = 0; i < item.childCount; ++i)
                     {
-                        panel = prefab.GetChild(i).GetComponent<OpenClosePanel>();
+                        panel = item.GetChild(i).GetComponent<OpenClosePanel>();
                         if (panel != null && panel.type != PanelType.None)
                         {
                             panelList.Add(panel);

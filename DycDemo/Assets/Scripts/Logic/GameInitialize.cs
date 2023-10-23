@@ -1,3 +1,4 @@
+using Feif.UIFramework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -64,10 +65,9 @@ public class GameInitialize : MonoSingleton<GameInitialize>
             yield return null;
         }
 
-        UIManager.Instance.RegisterListener();
-        //CameraController.Instance.RegisterListenner();
-
-
+        //UIManager.Instance.RegisterListener();
+        UIFrame.Instance.RegisterListener();
+        
         // ¼ÓÔØÏµÍ³ÅäÖÃ todo
         //ConfigManager.Instance.LoadAllConfigs();
         //yield return new WaitUntil(() => { return ConfigManager.Instance.IsLoaded; });
@@ -82,12 +82,12 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
         OnGameInit();
 
-        var uiMgr = UIManager.Instance;
-        uiMgr.AsyncLoadPreLoadingPanels(SceneType.All);
-        while (uiMgr.HasWaite)
-        {
-            yield return null;
-        }
+        //var uiMgr = UIManager.Instance;
+        //uiMgr.AsyncLoadPreLoadingPanels(SceneType.All);
+        //while (uiMgr.HasWaite)
+        //{
+        //    yield return null;
+        //}
         LogUtil.Log("Game Initialize Pre loading finish!!!!");
         yield return new WaitForEndOfFrame();
 

@@ -16,12 +16,18 @@ MonoBehaviour:
   - group: 5
     type: 2
     scene: 10
-    name: UpdatePanel
-    isResident: 1
+    name: LoadingPanel
+    isResident: 0
     preloading: 0
   - group: 1
     type: 1
     scene: 1
     name: LoginPanel
     isResident: 0
+    preloading: 0
+  - group: 1
+    type: 3
+    scene: 2
+    name: MainPanel
+    isResident: 1
     preloading: 0
