@@ -15,8 +15,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
     public bool ShowFrame;                    //显示帧数
     public int TargetFrame;                   //限定帧数
-    public bool ShowDebugGrid;
-
+   
     [Header("开启更新")] public bool update;
     public List<LoadPrefabConfig> firstLoadPrefabs;
     public event Action GameInitEvent;
@@ -25,7 +24,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
     protected override void Awake()
     {
         base.Awake();
-        LogUtil.Log("Log GameInitialize Awake");
+        LogUtil.Log("GameInitialize Awake");
 
         Application.targetFrameRate = TargetFrame;
         Application.runInBackground = true;
@@ -38,14 +37,14 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
     private void Start()
     {
-        LogUtil.Log("Log GameInitialize Start");
+        LogUtil.Log("GameInitialize Start");
         GameUpdate.Instance.StartGameUpdate(update);
     }
 
     //进入游戏
     public IEnumerator EnterGame()
     {
-        LogUtil.Log("Log GameInitialize EnterGame");
+        LogUtil.Log("GameInitialize EnterGame");
         var resourMgr = ResourceManager.Instance;
         int count = 0;
         count = firstLoadPrefabs.Count;
@@ -53,7 +52,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
         {
             resourMgr.CreatInstanceAsync(item.name, (obj, parma) =>
             {
-                LogUtil.Log("Log EnterGame success  " + obj + "  " + parma);
+                LogUtil.Log("GameInitialize EnterGame success = " + obj + "  " + parma);
                 obj.name = item.name;
                 obj.transform.localPosition = item.pos;
                 count--;
@@ -66,10 +65,10 @@ public class GameInitialize : MonoSingleton<GameInitialize>
         }
 
         UIFrame.Instance.RegisterListener();
-        LogUtil.Log("Script GameInitialize Loading Finish !!!");
+        LogUtil.Log("GameInitialize GameInitialize Loading Finish !!!");
        
         yield return new WaitForEndOfFrame();
 
-        SceneManager.Instance.StartLevel(Global.LOGIN_LEVEL_NAME);
+        //SceneManager.Instance.StartLevel(Global.LOGIN_LEVEL_NAME);
     }
 }

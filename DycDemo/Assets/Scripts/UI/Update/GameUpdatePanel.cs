@@ -68,5 +68,12 @@ public class GameUpdatePanel : MonoBehaviour
                 textLabel.text = "版本更新完成";
                 break;
         }
+
+        if(obj == GameUpdate.UpdateState.Finish)
+        {
+            //Destroy(this.gameObject);
+            LogUtil.Log("GameUpdatePanel OnUpdateStateChanged = " + this.gameObject);
+            ResourceManager.Instance.DestroyInstance(this.gameObject);
+        }
     }
 }

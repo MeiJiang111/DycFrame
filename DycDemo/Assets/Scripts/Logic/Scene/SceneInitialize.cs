@@ -19,7 +19,7 @@ public class SceneInitialize : MonoBehaviour
 
     private void Awake()
     {
-        UIManager.Instance.CurUISceneType = uiScene;
+        //UIManager.Instance.CurUISceneType = uiScene;
         SceneManager.Instance.RegisterLoadPrefabs(asyncPrefabs, CreatPrefab);
         AudioSourceManager.Instance.CurBGM = bgm;
     }

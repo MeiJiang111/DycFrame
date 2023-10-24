@@ -40,6 +40,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     /// <param name="autoActive_"></param>
     public void LoadLevelAsync(string name_, bool autoActive_ = true)
     {
+        LogUtil.Log("SceneLoader LoadLevelAsync");
         if (InLoading)
         {
             LogUtil.LogWarningFormat("{0} level is loading ,can not load new level!", _newLevel);

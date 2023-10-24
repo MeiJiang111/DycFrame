@@ -44,6 +44,8 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 
     protected override void Awake()
     {
+        LogUtil.Log("GameUpdate Awake");
+
         _state = UpdateState.None;
         updateCatalogs = new List<string>();
     }
@@ -54,7 +56,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
     /// <param name="update_"></param>
     public void StartGameUpdate(bool update_ = true)
     {
-        LogUtil.Log("Log GameUpdate StartGameUpdate == " + update_);
+        LogUtil.Log("GameUpdate StartGameUpdate == " + update_);
 #if UNITY_EDITOR
         if (!update_)
         {
@@ -93,7 +95,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 
         CurState = UpdateState.VerifyVersion;
         var handler = Addressables.CheckForCatalogUpdates(false);
-        LogUtil.Log("Log StartGameUpdateImple handler == " + handler.Status);
+        LogUtil.Log("GameUpdate StartGameUpdateImple handler == " + handler.Status);
         yield return handler;
 
         if (handler.Status != AsyncOperationStatus.Succeeded ||

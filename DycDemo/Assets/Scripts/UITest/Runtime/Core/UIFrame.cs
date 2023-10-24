@@ -57,6 +57,8 @@ namespace Feif.UIFramework
 
         protected override void Awake()
         {
+            LogUtil.Log("UIFrame Awake");
+
             base.Awake();
 
             if (canvas == null)
@@ -81,7 +83,7 @@ namespace Feif.UIFramework
             layerTransform.anchorMax = Vector2.one;
             layerTransform.offsetMin = Vector2.zero;
             layerTransform.offsetMax = Vector2.zero;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
 
         public void RegisterListener()
@@ -468,8 +470,11 @@ namespace Feif.UIFramework
 
         private static async Task<GameObject> RequestInstance(Type type, UIData data)
         {
-            if (type == null) throw new NullReferenceException();
-
+            if (type == null)
+            {
+                throw new NullReferenceException();
+            }
+               
             if (instances.TryGetValue(type, out var instance))
             {
                 TrySetData(instance.GetComponent<UIBase>(), data);

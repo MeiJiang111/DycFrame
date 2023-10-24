@@ -118,15 +118,16 @@ public class SceneManager : MonoSingleton<SceneManager>
         SceneAsyncPrefabs.Clear();
         asyncLoadedNum = 0;
         StopAllCoroutines();
-        StartCoroutine(StartLevelImple());
+        StartCoroutine(StartSceneImple());
         return true;
     }
 
-    IEnumerator StartLevelImple()
+    IEnumerator StartSceneImple()
     {
+        LogUtil.Log("SceneManager StartLevelImple");
         yield return null;
-        StartLoadingNewLevelEvent?.Invoke(_newScene);
-        yield return null;
+        //StartLoadingNewLevelEvent?.Invoke(_newScene);
+        //yield return null;
         sceneLoader.LoadLevelAsync(_newScene, _autoActive);
     }
 
