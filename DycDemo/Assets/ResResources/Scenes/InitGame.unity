@@ -473,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2848920812796557114, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7504173478453056452, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
       propertyPath: m_Pivot.x
@@ -561,13 +561,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8668846622306701549, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8668846622306701549, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1233828533841647904, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
 --- !u!224 &1325252957 stripped
 RectTransform:
@@ -1498,7 +1499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &8712165282239541520
 MonoBehaviour:
   m_ObjectHideFlags: 3

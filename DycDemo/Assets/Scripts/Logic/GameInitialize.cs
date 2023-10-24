@@ -1,8 +1,8 @@
-using Feif.UIFramework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Feif.UIFramework;
 
 public class GameInitialize : MonoSingleton<GameInitialize>
 {
@@ -25,7 +25,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
     protected override void Awake()
     {
         base.Awake();
-        LogUtil.Log("Log GameInitialize Awake");
+        //LogUtil.Log("Log GameInitialize Awake");
 
         Application.targetFrameRate = TargetFrame;
         Application.runInBackground = true;
@@ -38,14 +38,14 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
     private void Start()
     {
-        LogUtil.Log("Log GameInitialize Start");
+        //LogUtil.Log("Log GameInitialize Start");
         GameUpdate.Instance.StartGameUpdate(update);
     }
 
     //进入游戏
     public IEnumerator EnterGame()
     {
-        LogUtil.Log("Log GameInitialize EnterGame");
+        //LogUtil.Log("Log GameInitialize EnterGame");
         var resourMgr = ResourceManager.Instance;
         int count = 0;
         count = firstLoadPrefabs.Count;
@@ -65,43 +65,12 @@ public class GameInitialize : MonoSingleton<GameInitialize>
             yield return null;
         }
 
-        //UIManager.Instance.RegisterListener();
+
         UIFrame.Instance.RegisterListener();
         
-        // 加载系统配置 todo
-        //ConfigManager.Instance.LoadAllConfigs();
-        //yield return new WaitUntil(() => { return ConfigManager.Instance.IsLoaded; });
-
-
-        //resourMgr.PreLoads();
-
-        //while (!resourMgr.PreLoadFinish)
-        //{
-        //    yield return null;
-        //}
-
-        OnGameInit();
-
-        //var uiMgr = UIManager.Instance;
-        //uiMgr.AsyncLoadPreLoadingPanels(SceneType.All);
-        //while (uiMgr.HasWaite)
-        //{
-        //    yield return null;
-        //}
-        LogUtil.Log("Game Initialize Pre loading finish!!!!");
+        LogUtil.Log("Script GameInitialize Loading Finish !!!");
         yield return new WaitForEndOfFrame();
 
-        //LevelManager.Instance.StartLevel(Global.LOGIN_LEVEL_NAME);
-    }
-
-    void OnGameInit()
-    {
-        //CacheResource.CheckCacheDir();
-        //GameInitEvent?.Invoke();
-    }
-
-    void OnLoadUpdataPanel()
-    {
-        MainSceneUIManager.Instance.OpenTargetSystem(SystemType.Fishery);
+        SceneManager.Instance.StartLevel(Global.LOGIN_LEVEL_NAME);
     }
 }

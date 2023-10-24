@@ -11,7 +11,7 @@ namespace Feif.UIFramework
 {
     [RequireComponent(typeof(RectTransform))]
     [DisallowMultipleComponent]
-    public class UIFrame : MonoBehaviour
+    public class UIFrame : MonoSingleton<UIFrame>
     {
         private static readonly Dictionary<Type, GameObject> instances = new Dictionary<Type, GameObject>();
         private static readonly Stack<(Type type, UIData data)> panelStack = new Stack<(Type, UIData)>();
@@ -55,8 +55,10 @@ namespace Feif.UIFramework
             }
         }
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             if (canvas == null)
             {
                 throw new Exception("UIFrame≥ı ºªØ ß∞‹£¨«Î…Ë÷√Canvas");
@@ -80,6 +82,11 @@ namespace Feif.UIFramework
             layerTransform.offsetMin = Vector2.zero;
             layerTransform.offsetMax = Vector2.zero;
             DontDestroyOnLoad(gameObject);
+        }
+
+        public void RegisterListener()
+        {
+            Camera = CameraController.Instance.uiCamera;
         }
 
 
@@ -408,7 +415,6 @@ namespace Feif.UIFramework
                     Debug.LogException(ex);
                 }
             }
-            GameObject.Destroy(instance);
         }
 
         /// <summary>

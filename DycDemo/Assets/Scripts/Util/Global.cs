@@ -30,8 +30,6 @@ public class Global
     public const string Clone_Str = "(Clone)";
 
 
-   //public static AsyncPrefabs DefaultAsyncPrefabs = new AsyncPrefabs() { name = string.Empty };
-
     public const int ONE_MINUTE = 60;
     public const int ONE_HOUR = ONE_MINUTE * 60;
     public const int ONE_DAY = ONE_HOUR * 24;
