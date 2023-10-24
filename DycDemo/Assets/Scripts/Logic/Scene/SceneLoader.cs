@@ -22,9 +22,13 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     SceneInstance _loadScene;
     SceneInstance _preScene;
 
+
     protected override void Awake()
     {
+    
         base.Awake();
+        LogUtil.Log("SceneLoader Awake");
+
         InLoading = false;
         _lastLevel = string.Empty;
     }

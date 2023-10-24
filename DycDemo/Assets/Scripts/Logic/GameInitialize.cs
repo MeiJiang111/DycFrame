@@ -25,7 +25,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
     protected override void Awake()
     {
         base.Awake();
-        //LogUtil.Log("Log GameInitialize Awake");
+        LogUtil.Log("Log GameInitialize Awake");
 
         Application.targetFrameRate = TargetFrame;
         Application.runInBackground = true;
@@ -38,14 +38,14 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
     private void Start()
     {
-        //LogUtil.Log("Log GameInitialize Start");
+        LogUtil.Log("Log GameInitialize Start");
         GameUpdate.Instance.StartGameUpdate(update);
     }
 
     //Ω¯»Î”Œœ∑
     public IEnumerator EnterGame()
     {
-        //LogUtil.Log("Log GameInitialize EnterGame");
+        LogUtil.Log("Log GameInitialize EnterGame");
         var resourMgr = ResourceManager.Instance;
         int count = 0;
         count = firstLoadPrefabs.Count;
@@ -65,10 +65,9 @@ public class GameInitialize : MonoSingleton<GameInitialize>
             yield return null;
         }
 
-
         UIFrame.Instance.RegisterListener();
-        
         LogUtil.Log("Script GameInitialize Loading Finish !!!");
+       
         yield return new WaitForEndOfFrame();
 
         SceneManager.Instance.StartLevel(Global.LOGIN_LEVEL_NAME);

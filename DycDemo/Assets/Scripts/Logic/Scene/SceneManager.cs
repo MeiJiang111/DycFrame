@@ -23,8 +23,9 @@ public struct AsyncPrefabs
 /// 场景管理器
 public class SceneManager : MonoSingleton<SceneManager>
 {
-    private List<AsyncPrefabs> SceneAsyncPrefabs;
-
+    SceneLoader sceneLoader;
+    List<AsyncPrefabs> SceneAsyncPrefabs;
+  
     public Action<string> StartLoadingNewLevelEvent;
     public Action LevelLoadedEvent;
     public Action LevelPreStartEvent;
@@ -43,25 +44,22 @@ public class SceneManager : MonoSingleton<SceneManager>
             }
             return asyncLoadedNum < SceneAsyncPrefabs.Count;
         }
-
     }
 
-
-    public float AsyncLoadingPct => asyncLoadedNum * 1f / SceneAsyncPrefabs.Count;
-    string _newLevel;
+    public bool _isStart;
+    string _newScene;
     bool _autoActive;
-    SceneLoader sceneLoader;
-    bool _isStart;
-    public bool LevelIsStart => _isStart;
-
     int _levelStartWaitCount = 0;
     int asyncLoadedNum;
-
-    
+    public float AsyncLoadingPct => asyncLoadedNum * 1f / SceneAsyncPrefabs.Count;
+   
+   
     protected override void Awake()
     {
         base.Awake();
+        LogUtil.Log("SceneManager Awake");
 
+        sceneLoader = SceneLoader.Instance;
         sceneLoader.LevelStartLoadEvent += OnLevelStartLoad;
         sceneLoader.LevelLoadedEvent += OnLevelLoaded;
         sceneLoader.LevelActivedEvent += OnLevelActived;
@@ -76,36 +74,37 @@ public class SceneManager : MonoSingleton<SceneManager>
         }
     }
 
-    //void CreatPrefabSuccess(GameObject obj, object parmas = null)
-    //{
-    //    asyncLoadedNum++;
-    //    var trueName = obj.name.Replace(Global.Clone_Str, "");
-    //    var _info = SceneAsyncPrefabs.Find(trueName);
-       
-    //    if (string.IsNullOrEmpty(_info.name))
-    //    {
-    //        LogUtil.LogWarningFormat("Creat prefab {0} success but not exists!!!", trueName);
-    //        return;
-    //    }
-    //    _info.CreatSuccess?.Invoke(trueName, obj, parmas);
-    //}
+    void CreatPrefabSuccess(GameObject obj, object parmas = null)
+    {
+        //asyncLoadedNum++;
+        //var trueName = obj.name.Replace(Global.Clone_Str, "");
+        //var _info = SceneAsyncPrefabs.Find(trueName);
+        
+        //if (string.IsNullOrEmpty(_info.name))
+        //{
+        //    LogUtil.LogWarningFormat("Creat prefab {0} success but not exists!!!", trueName);
+        //    return;
+        //}
+        //_info.CreatSuccess?.Invoke(trueName, obj, parmas);
+    }
 
-    //void CreatPrefabFaild(string name)
-    //{
-    //    asyncLoadedNum++;
-    //    var _info = SceneAsyncPrefabs.Find(name);
-    //    if (string.IsNullOrEmpty(_info.name))
-    //    {
-    //        LogUtil.LogWarningFormat("Creat prefab {0} Faild but not exists!!!", name);
-    //        return;
-    //    }
-    //    _info.CreatFaild?.Invoke(name);
-    //}
+    void CreatPrefabFaild(string name)
+    {
+        //asyncLoadedNum++;
+        //var _info = SceneAsyncPrefabs.Find(name);
+        //if (string.IsNullOrEmpty(_info.name))
+        //{
+        //    LogUtil.LogWarningFormat("Creat prefab {0} Faild but not exists!!!", name);
+        //    return;
+        //}
+        //_info.CreatFaild?.Invoke(name);
+    }
 
 
     #region 加载场景
     public bool StartLevel(string name_, bool autoActive = true)
     {
+        LogUtil.Log("SceneManager StartLevel");
         if (sceneLoader.InLoading)
         {
             LogUtil.LogWarningFormat("Call attempted to LoadLevel {0} while a level is already in the process of loading; ignoring the load request...", sceneLoader.LoadingLevel);
@@ -114,7 +113,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
         _isStart = false;
         _autoActive = autoActive;
-        _newLevel = name_;
+        _newScene = name_;
         _levelStartWaitCount = 0;
         SceneAsyncPrefabs.Clear();
         asyncLoadedNum = 0;
@@ -126,14 +125,14 @@ public class SceneManager : MonoSingleton<SceneManager>
     IEnumerator StartLevelImple()
     {
         yield return null;
-        StartLoadingNewLevelEvent?.Invoke(_newLevel);
+        StartLoadingNewLevelEvent?.Invoke(_newScene);
         yield return null;
-        sceneLoader.LoadLevelAsync(_newLevel, _autoActive);
+        sceneLoader.LoadLevelAsync(_newScene, _autoActive);
     }
 
     public void ActiveLevel()
     {
-        if (string.IsNullOrEmpty(_newLevel))
+        if (string.IsNullOrEmpty(_newScene))
         {
             return;
         }
@@ -155,7 +154,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     private void OnLevelLoaded()
     {
-        CurLevel = _newLevel;
+        CurLevel = _newScene;
         LevelLoadedEvent?.Invoke();
 
         if (!sceneLoader.AutoActive && _autoActive)
