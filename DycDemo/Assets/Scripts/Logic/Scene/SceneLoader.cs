@@ -58,8 +58,9 @@ public class SceneLoader : MonoSingleton<SceneLoader>
 
     private void OnLevelLoaded(AsyncOperationHandle<SceneInstance> handle_)
     {
+        LogUtil.Log("SceneLoader OnLevelLoaded 加载场景成功以后的回调");
+       
         InLoading = false;
-
         if (handle_.Status != AsyncOperationStatus.Succeeded)
         {
             LogUtil.LogErrorFormat("LoadLevel {0} failed", _newLevel);

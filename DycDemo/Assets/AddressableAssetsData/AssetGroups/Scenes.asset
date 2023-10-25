@@ -20,15 +20,18 @@ MonoBehaviour:
   - m_GUID: c54288f4ab2f702469b8efa55a7a4a07
     m_Address: InitGame
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Scenes
   - m_GUID: bfea00bc52b73294ca9b4b00f36726fe
     m_Address: Login
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Scenes
   - m_GUID: dbd0f8b02aea8f34f87022a5bb07f223
     m_Address: Main
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Scenes
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

@@ -16,7 +16,292 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 07076f98088df3d41944f7b9bc8804f5
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: bf0394f7b802ae24b9e5ed45642b1d6d
+    m_Address: bg1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BackGround
+  - m_GUID: 9c31eaa4cdad24241bd6748a8c8eb59a
+    m_Address: bg2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BackGround
+  - m_GUID: 2c32ca4fe8f8c6047bdcbd4d75689cdc
+    m_Address: pic_mining_game_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BackGround
+  - m_GUID: c8a210026a7022d46b536f8f78088eee
+    m_Address: build_ico_bank
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: a8e2859cdff578049921935d91106e13
+    m_Address: build_ico_farm
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: 8fc8d21bbce2b8c4b8ee6a204f9976e4
+    m_Address: build_ico_granary
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: 52863720097f08348a34cf59fb952934
+    m_Address: build_ico_house
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: 9af5d0beb2e7b4f41be8c80ffc453824
+    m_Address: build_ico_market
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: 51cae49d3121f8a4196db9eefe3291f3
+    m_Address: build_ico_school
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: 260cea5a734f2e94a9217a5434dd573c
+    m_Address: build_ico_workshop
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_BuildIco
+  - m_GUID: 808d7bb779fc1c24aa420e4907c04626
+    m_Address: icon_blue_food
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: bc654595bc74f2148b04c684586aa9fe
+    m_Address: icon_orange_flag
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 9679e0a9c96a96142a886c32996eec48
+    m_Address: icon_status_clock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: aa3e65200d1cdb645a4282228cebde1d
+    m_Address: icon_status_coin
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 517a4b14756c8934e970738d38ef8005
+    m_Address: icon_status_danger
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 1bec1fa4c4871d143bb0ca822113094b
+    m_Address: icon_status_flag
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 5ba37b801e8845144947bdb4d73c991c
+    m_Address: icon_status_flower
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 2e64157cd653e6547b07eef79efe0eda
+    m_Address: icon_status_food
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 5b1c16f36878dc6438ec3504f34b021b
+    m_Address: icon_status_hoe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 43aa722545691ea42b9258e8eaa0a2d8
+    m_Address: icon_status_person
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: 9401d376d66d4214f85d64e87f1675af
+    m_Address: icon_status_up
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Connon
+  - m_GUID: a3823430201dc264d93bcb70f5dad5b2
+    m_Address: bg_ico2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Construction
+  - m_GUID: 1927328364e7e0f4a9b09bad20ea6911
+    m_Address: s_bg1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Construction
+  - m_GUID: 4752238db40762442a911e5aa4d37233
+    m_Address: s_btn1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Construction
+  - m_GUID: 6de81c50862613a4c88a1eb13cd22b4a
+    m_Address: s_sm_ico1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Construction
+  - m_GUID: 4e8f9e30f88ece049878b772e3064f39
+    m_Address: btn_sm_circle_yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: 1fff476eff7dfee469aded3f9091438c
+    m_Address: icon_fish_bucket
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: 1ba9a38011fa5714abfc9174b19e9459
+    m_Address: icon_rudder
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: 23b3c491346dc704b8470054aebbfa03
+    m_Address: icon_ship
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: a62ca9a6b757b2f40b70b7864dcd955a
+    m_Address: pic_blue_board_circle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: 6f6259d94e0b8404fab43942160d95c3
+    m_Address: pic_blue_board_line
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: 99fc916397d3ff64eb27b4aac8ea12e8
+    m_Address: pic_game_ship
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Fishery
+  - m_GUID: c417b9a7c4933664a9c4e2463b613ccb
+    m_Address: bg1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_GameUpdate
+  - m_GUID: 41f6edbb1c98b4a4a9e4600dcb5767c0
+    m_Address: white
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_GameUpdate
+  - m_GUID: ea2f1205d5287444ebab0d8831d94fb2
+    m_Address: icon_dlalog_heart
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 4fd339b76e14ad24399d4818008b8cd3
+    m_Address: icon_dlalog_location
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 7750187ce417b3f4c97fca2729e1e0bd
+    m_Address: icon_dlalog_phone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: f8063a97607c5ab40b827de0edd6df7e
+    m_Address: icon_dlalog_photo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: adb080882291cc54c97014b56310513f
+    m_Address: icon_dlalog_smile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 4e3ca43e3d54bce47be2dd408761cdef
+    m_Address: icon_home_hammer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: b928262a94d921b43adde6a5f6b17b44
+    m_Address: icon_home_hoe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: bac76f04af169d34cad5385eff047622
+    m_Address: icon_home_shovel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: e5297b3dc4920d1448cf9a7eae925241
+    m_Address: icon_home_status_close
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: c7d0a11eb3ca8c74a8fe5866b65408bf
+    m_Address: icon_home_status_datails
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: a589e2cfa028dc845b737c15d8094864
+    m_Address: icon_home_status_ok
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 1585f745e4cac6742982b18fac8349e4
+    m_Address: icon_home_status_remove
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 363b16084857af54b9a87b124cd01aa2
+    m_Address: icon_home_status_rotate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 31cb4969047eb99498e0e96170fb2502
+    m_Address: icon_ship
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 6a3900e32a2c7a644904a140735b8b5f
+    m_Address: pic_avatar_status1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 22bd32e78f79e344f8d8c197778aa60a
+    m_Address: pic_square_dialog
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 975507afc4df36d4eaa7bcca118a9065
+    m_Address: pic_white_dialog
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Main
+  - m_GUID: 7179b445bb7f842498a19582d58673f7
+    m_Address: icon_mining_magnifier
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Treasure
+  - m_GUID: d646e0a623d11524d9c16f4e4c2dda36
+    m_Address: icon_mining_map
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Treasure
+  - m_GUID: ca921a430673a004d86a6b9de194ed97
+    m_Address: pic_mining
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Treasure
+  - m_GUID: a8c428d57bc73264882220b538afcd4c
+    m_Address: btn_sm_square_red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_WishingTree
+  - m_GUID: de3b97c58174aed418a746636f076f4d
+    m_Address: pic_tree_game_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_WishingTree
+  - m_GUID: 951c2ed5a50104e429a97948c3c80f56
+    m_Address: pic_wish_tree
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_WishingTree
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

@@ -47,6 +47,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 796176bf47f5b504ab8f6671847004cd, type: 2}
   - {fileID: 11400000, guid: 25753e35976c09240b70bf8e175b03f5, type: 2}
   - {fileID: 11400000, guid: bb0dd6335dedab7478a6221d470171c9, type: 2}
+  - {fileID: 11400000, guid: 4b8da31b71bff3e4e8880f9be89830d8, type: 2}
+  - {fileID: 11400000, guid: 49ee6e6881e9e7f45837cabae39de22f, type: 2}
+  - {fileID: 11400000, guid: f349700885e94834089198dad50d5ce4, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -88,6 +91,21 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - Prefabs
+    - Scenes
+    - Atlas_BackGround
+    - Atlas_BuildIco
+    - Atlas_Connon
+    - Atlas_Construction
+    - Atlas_Fishery
+    - Atlas_GameUpdate
+    - Atlas_Main
+    - Atlas_Treasure
+    - Atlas_WishingTree
+    - Audio_BG
+    - Audio_Sound
+    - Config_Excel
+    - Config_Scripteobject
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: c6a76323de1349144b636f9399cccfda, type: 2}

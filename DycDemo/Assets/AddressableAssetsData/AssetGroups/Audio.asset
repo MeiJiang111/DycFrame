@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Audio
+  m_EditorClassIdentifier: 
+  m_GroupName: Audio
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f2d0d60b1a9acea4f98883c953560dbd
+  m_SerializeEntries:
+  - m_GUID: 6e25833643248d54e90520157bf5e9ed
+    m_Address: Cleopatra
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_BG
+  - m_GUID: ddf9cb3a6482dbb4ab0f8396c67a4e50
+    m_Address: Black
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Sound
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 916b85d760ca6274aa2c619d31bcd98c, type: 2}
+    - {fileID: 11400000, guid: 89ae2836d278c9d4ab686bf89f4eb3a7, type: 2}

@@ -57,9 +57,8 @@ namespace Feif.UIFramework
 
         protected override void Awake()
         {
-            LogUtil.Log("UIFrame Awake");
-
             base.Awake();
+            LogUtil.Log("UIFrame Awake");
 
             if (canvas == null)
             {
@@ -83,7 +82,6 @@ namespace Feif.UIFramework
             layerTransform.anchorMax = Vector2.one;
             layerTransform.offsetMin = Vector2.zero;
             layerTransform.offsetMax = Vector2.zero;
-            //DontDestroyOnLoad(gameObject);
         }
 
         public void RegisterListener()

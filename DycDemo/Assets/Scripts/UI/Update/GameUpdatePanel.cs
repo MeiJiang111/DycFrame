@@ -71,8 +71,6 @@ public class GameUpdatePanel : MonoBehaviour
 
         if(obj == GameUpdate.UpdateState.Finish)
         {
-            //Destroy(this.gameObject);
-            LogUtil.Log("GameUpdatePanel OnUpdateStateChanged = " + this.gameObject);
             ResourceManager.Instance.DestroyInstance(this.gameObject);
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
@@ -68,24 +69,37 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     public void RegisterLoadPrefabs(List<AsyncPrefabInfo> prefabs, Action<string, GameObject, object> success, Action<string> faild = null)
     {
+        
         foreach (var item in prefabs)
         {
+            LogUtil.Log("item == " + item.Name);
             SceneAsyncPrefabs.Add(new AsyncPrefabs() { name = item.Name, CreatSuccess = success, CreatFaild = faild });
         }
     }
 
     void CreatPrefabSuccess(GameObject obj, object parmas = null)
     {
-        //asyncLoadedNum++;
-        //var trueName = obj.name.Replace(Global.Clone_Str, "");
-        //var _info = SceneAsyncPrefabs.Find(trueName);
-        
-        //if (string.IsNullOrEmpty(_info.name))
-        //{
-        //    LogUtil.LogWarningFormat("Creat prefab {0} success but not exists!!!", trueName);
-        //    return;
-        //}
-        //_info.CreatSuccess?.Invoke(trueName, obj, parmas);
+        asyncLoadedNum++;
+        var trueName = obj.name.Replace(Global.Clone_Str, "");
+        LogUtil.Log("trueName == " + trueName);
+
+  
+        AsyncPrefabs asyncPrefabs = new AsyncPrefabs();
+        foreach (var item in SceneAsyncPrefabs)
+        {
+            if (item.name.Equals(trueName))
+            {
+                asyncPrefabs = item;
+            }
+        }
+
+        LogUtil.Log("asyncPrefabs == " + asyncPrefabs);
+        if (string.IsNullOrEmpty(asyncPrefabs.name))
+        {
+            LogUtil.LogWarningFormat("Creat prefab {0} success but not exists!!!", trueName);
+            return;
+        }
+        asyncPrefabs.CreatSuccess?.Invoke(trueName, obj, parmas);
     }
 
     void CreatPrefabFaild(string name)
@@ -166,6 +180,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     private void OnLevelActived()
     {
+        LogUtil.Log("OnLevelActived 加载场景成功以后开始创建预制 11");
         foreach (var item in SceneAsyncPrefabs)
         {
             ResourceManager.Instance.CreatInstanceAsync(item.name, CreatPrefabSuccess, CreatPrefabFaild);
@@ -177,6 +192,8 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     IEnumerator LevelStart()
     {
+        LogUtil.Log("LevelStart 加载场景成功以后开始创建预制 22");
+
         yield return null;
         _isStart = false;
         LevelPreStartEvent?.Invoke();
