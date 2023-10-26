@@ -22,6 +22,8 @@ public class EditorPath
         "Assets/ResResources/Prefabs/UI/Main/Panel",
     };
 
+
+    public static string UI_PANEL_CONFIG_PATH = "Assets/ResResources/Config/Scripteobject/UIPanelConfigs.asset";
     public static string PANEL_CONFIG_PATH = "Assets/ResResources/Config/Scripteobject/PanelPrefabsConfig.asset";
     public static string TOWN_GRIDS_CONFIG_PATH = "Assets/ResResources/Config/Scripteobject/IslandGridsConfig.asset";
     public static string TOWN_BUILDS_CONFIG_PATH = "Assets/ResResources/Config/Scripteobject/IslandBuildsConfig.asset";

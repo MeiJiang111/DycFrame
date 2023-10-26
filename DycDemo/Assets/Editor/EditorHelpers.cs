@@ -46,9 +46,8 @@ class EditorHelpers
             return l;
         }
 
-//		string[] files = Directory.GetFiles(path);
 	    List<string> files = new List<string>();
-	    GetFiles(path,files);
+	    GetFiles(path, files);
 		foreach (string file in files)
 		{
 			if (file.Contains(".meta")) continue;

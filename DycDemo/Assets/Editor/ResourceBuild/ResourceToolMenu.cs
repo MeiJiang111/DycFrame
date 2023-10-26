@@ -28,4 +28,10 @@ public class ResourceToolMenu
         //AssetDatabase.CreateAsset(obj, EditorPath.TOWN_GRIDS_CONFIG_PATH);
         //AssetDatabase.Refresh();
     }
+
+    [MenuItem("AB/构建UI面板配置(New)", false, 5)]
+    public static void BuildUIConfig()
+    {
+        NewPanelConfigBuild.Build();
+    }
 }

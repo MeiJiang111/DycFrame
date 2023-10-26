@@ -2,6 +2,7 @@
 public abstract class GameSystem
 {
     public virtual void Init() { }
+
     /// <summary>
     /// µÇÂ¼³É¹¦
     /// </summary>

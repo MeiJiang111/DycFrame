@@ -12,6 +12,7 @@ public class LoginInitialize : MonoBehaviour
 {
     [SerializeField] private GameObject stuckPanel;
 
+    public UIPanelConfigs UIdata;
     private Dictionary<Type, AsyncOperationHandle<GameObject>> handles = new Dictionary<Type, AsyncOperationHandle<GameObject>>();
 
     private void Awake()
@@ -36,16 +37,22 @@ public class LoginInitialize : MonoBehaviour
         UIFrame.Show<LoginPanel>(data);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     private async Task<GameObject> LoadAssetRequest(Type type)
     {
         Debug.Log("type = " + type);
         var layer = UIFrame.GetLayer(type);
         Debug.Log("layer = " + layer);
-
+        Debug.Log("type.Name = " + type.Name);
+        
         if (!handles.ContainsKey(type))
         {
             // 使用Addressables异步加载资源
-            var handle = Addressables.LoadAssetAsync<GameObject>(Global.LOGINPANEL);
+            var handle = Addressables.LoadAssetAsync<GameObject>(type.Name);
 
             // 等待异步加载完成
             await handle.Task;
@@ -64,10 +71,12 @@ public class LoginInitialize : MonoBehaviour
     // 资源释放事件
     private void OnAssetRelease(Type type)
     {
+        Debug.Log("资源释放事件" + type);
         if (handles.ContainsKey(type))
         {
             Addressables.Release(handles[type]);
         }
+        handles.Clear();
     }
 
     private void OnStuckStart()
@@ -80,4 +89,8 @@ public class LoginInitialize : MonoBehaviour
         stuckPanel.SetActive(false);
     }
 
+    private void OnDestroy()
+    {
+        handles.Clear();
+    }
 }

@@ -483,7 +483,8 @@ GameObject:
   - component: {fileID: 540758750402940658}
   - component: {fileID: 1723148443343549745}
   - component: {fileID: 8400241845050776038}
-  - component: {fileID: 6310912961215221993}
+  - component: {fileID: 645792828767339247}
+  - component: {fileID: 118744892819453302}
   m_Layer: 5
   m_Name: LoadingPanel
   m_TagString: Untagged
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6310912961215221993
+--- !u!114 &645792828767339247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -560,12 +561,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5200638667829094924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cf42c417938eca4b8fca82626f6e586, type: 3}
+  m_Script: {fileID: 11500000, guid: c65b24fb1d6eb1b4a9d1d71c29ad7e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  group: 5
-  scene: 10
   isResident: 0
-  initOpenAwake: 0
-  isInitialOpened: 0
+--- !u!114 &118744892819453302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200638667829094924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a614f25d3136c4e941128e54dcead2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoDestroy: 1
+  Parent: {fileID: 0}
+  Children: []

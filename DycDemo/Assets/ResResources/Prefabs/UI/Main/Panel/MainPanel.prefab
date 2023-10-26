@@ -2455,7 +2455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7849685898428073448}
   - component: {fileID: 4757289102988326366}
-  - component: {fileID: 2483198788654736593}
+  - component: {fileID: -7384740994331570060}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -2505,7 +2505,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3686519340857729194}
   m_CullTransparentMesh: 0
---- !u!114 &2483198788654736593
+--- !u!114 &-7384740994331570060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2514,15 +2514,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3686519340857729194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cf42c417938eca4b8fca82626f6e586, type: 3}
+  m_Script: {fileID: 11500000, guid: c65b24fb1d6eb1b4a9d1d71c29ad7e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  group: 1
-  scene: 2
-  isResident: 1
-  initOpenAwake: 0
-  isInitialOpened: 0
+  isResident: 0
 --- !u!1 &3774729084436614526
 GameObject:
   m_ObjectHideFlags: 0

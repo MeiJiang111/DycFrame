@@ -59,3 +59,26 @@ public struct PanelPrefabConfig
     public bool isResident;           //是否持久，
     public bool preloading;           //是否预加载
 }
+
+
+
+/// <summary>
+/// Enum UI面板类型
+/// </summary>
+public enum PanelTypeTest
+{
+    None = 0,                         //无效值
+    LoginPanel = 1,                   //登录面板
+    LoadingPanel = 2, 
+    MainPanel = 3,                    //主面板
+    GameUpdatePanel = 999,            //更新面板
+    SutckPanel = 1000,                //SutckPanel
+}
+
+[System.Serializable]
+public struct UIPanelStruct
+{
+    public string name;
+    public PanelTypeTest type;
+    public bool isResident;          //是否持久， 
+}

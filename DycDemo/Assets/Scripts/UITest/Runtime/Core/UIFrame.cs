@@ -870,6 +870,7 @@ namespace Feif.UIFramework
         private static RectTransform GetOrCreateLayerTransform(Type type)
         {
             var layer = GetLayer(type);
+            
             if (!uiLayers.TryGetValue(layer, out var result))
             {
                 var layerObject = new GameObject(layer.GetName());
@@ -880,6 +881,8 @@ namespace Feif.UIFramework
                 result.offsetMin = Vector2.zero;
                 result.offsetMax = Vector2.zero;
                 result.localScale = Vector3.one;
+                result.localPosition = Vector3.zero;
+             
                 uiLayers[layer] = result;
                 int index = 0;
                 foreach (var item in uiLayers.OrderBy(i => i.Key.GetOrder()))

@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stuckPanel: {fileID: 4900064124969430715, guid: 7ce9a218a1f35c64a83ce31a3816b84b, type: 3}
+  UIdata: {fileID: 11400000, guid: 2173cc5fe003b3f4491d2ba4d8e04522, type: 2}
