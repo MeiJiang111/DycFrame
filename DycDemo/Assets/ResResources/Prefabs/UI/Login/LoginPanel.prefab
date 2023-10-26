@@ -393,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243239279837180660}
   - component: {fileID: 4562185012757511085}
+  - component: {fileID: 6473594652102066065}
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -432,6 +433,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5646659718741074119}
   m_CullTransparentMesh: 0
+--- !u!114 &6473594652102066065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646659718741074119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bf125a9305d8347a37bac99b94686a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoDestroy: 1
+  Parent: {fileID: 0}
+  Children: []
 --- !u!1 &5760010776747495681
 GameObject:
   m_ObjectHideFlags: 0

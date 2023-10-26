@@ -20,16 +20,37 @@ MonoBehaviour:
   - m_GUID: 425307bb9cf77b44f92648f3eae18e5c
     m_Address: GameManager
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Prefabs_Global
   - m_GUID: fdde0a71d2fbd9447ac409c7cbea425b
     m_Address: LoginPanel
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Prefabs_UI_Login
   - m_GUID: 70e821862659acb4cbb8980a90f3b931
     m_Address: UIFrame
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefabs
+  - m_GUID: aa6d043c915786844bd08e81906794d8
+    m_Address: LoadingPanel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs_UI_Global
+  - m_GUID: 7ce9a218a1f35c64a83ce31a3816b84b
+    m_Address: SutckPanel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs_UI_Global
+  - m_GUID: 361e1180ccedd0b4caefbc42ce7a2430
+    m_Address: MainPanel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs_UI_Main_Panel
+  - m_GUID: 8fe3823ea5a2f964d821802549aabf96
+    m_Address: LoginInitialize
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

@@ -56,7 +56,6 @@ public class GameUpdate:MonoSingleton<GameUpdate>
     /// <param name="update_"></param>
     public void StartGameUpdate(bool update_ = true)
     {
-        LogUtil.Log("GameUpdate StartGameUpdate == " + update_);
 #if UNITY_EDITOR
         if (!update_)
         {

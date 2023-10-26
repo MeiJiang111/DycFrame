@@ -1,18 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
+using Feif.UIFramework;
+using System;
 
-public class LoginPanel : MonoBehaviour
+
+namespace Feif.UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LoginPanelData : UIData
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    [PanelLayer]
+    public class LoginPanel : UIComponent<LoginPanelData>
     {
-        
+
+        protected override Task OnRefresh()
+        {
+            Debug.Log("LoginPanel OnRefresh");
+            return Task.CompletedTask;
+        }
+        protected override void OnBind()
+        {
+          
+        }
+
+        protected override void OnUnbind()
+        {
+          
+        }
+
     }
+
 }

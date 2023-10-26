@@ -177,16 +177,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Atlas_Fishery
-  - m_GUID: c417b9a7c4933664a9c4e2463b613ccb
-    m_Address: bg1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Atlas_GameUpdate
-  - m_GUID: 41f6edbb1c98b4a4a9e4600dcb5767c0
-    m_Address: white
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Atlas_GameUpdate
   - m_GUID: ea2f1205d5287444ebab0d8831d94fb2
     m_Address: icon_dlalog_heart
     m_ReadOnly: 0
@@ -302,6 +292,391 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Atlas_WishingTree
+  - m_GUID: e6a14f4eb2028ed4e8f70f7a8a9dbf50
+    m_Address: btn_clean_blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: f3a2549ebfd28bb4992b77c2a0b5841a
+    m_Address: btn_clean_grey
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: bbdc197c73e3eaf48a26da777712df02
+    m_Address: btn_clean_red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: a6f766a09d59bc74f8781e9b6a8ea7ba
+    m_Address: btn_details
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: fdf547695cae1c549bd691b01a32f62b
+    m_Address: btn_dura_blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 75cf2d3b24b4bd2429b546d53f67d26d
+    m_Address: btn_dura_grey
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 6a1c0ee3f1651454daa2525069dd3ba1
+    m_Address: btn_dura_red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 512e6d689e98a4141a53892b231821b8
+    m_Address: btn_popup_back
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 2beb8a03d528cb742a2e9d495b278855
+    m_Address: btn_popup_close
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 481d97a8ad7f0f0428866fc9a862cc0c
+    m_Address: btn_sm_square_blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: dc3ca129bc0664d44a0d515284493e06
+    m_Address: btn_sm_square_green
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 3bc569de47e49a044af6e0b26aec53df
+    m_Address: btn_sm_square_grey
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 9d4e56639e7353e4fbaffa18b49e63f8
+    m_Address: btn_sm_square_orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 4ed0e78f6f8b02f4aa777a893caef415
+    m_Address: btn_sm_square_yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 84eaa3e9da4cf9c4aa73188d5f9fef9e
+    m_Address: chara_white_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 7ebf7c91ab0060741ba3bbffbcc3fbaa
+    m_Address: dialouge_white_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 5cc509316a144794692ce7bf2594afc5
+    m_Address: dialouge_white_bg_hook
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 57a1f42235cabab479b97dfbfc1fa940
+    m_Address: icon_ad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 5cf56d2568e910a47ba5932600631e5c
+    m_Address: icon_arrow_yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 4e27ca09bccf57344bfbcec65f904381
+    m_Address: icon_avatar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 75576eed4cff6174b8506c9ad8b13894
+    m_Address: icon_avatar_shadow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 82505f39cf4f59543826a60b188dcbfa
+    m_Address: icon_avatar_tourist
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 7b06a1fab01a9d04ba0a19f9a1dc32c3
+    m_Address: icon_badge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: e2c89adfd4711bd489412f8916f9ab3e
+    m_Address: icon_bank_card
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: ce427e0cb601543408d0f73e35daf976
+    m_Address: icon_bank_card_vip
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 7c2842e3bf77ab24bb20fae70684628b
+    m_Address: icon_grey_lock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 30e3c3ca0fa84e5429ca52805d367718
+    m_Address: icon_progress_clock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 710c662b496a19644aa73eb6571398a8
+    m_Address: icon_red_circle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: f5c7f4fb535ac184f9cbf17472e5f23a
+    m_Address: icon_ship_star
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 2836f37ce68a8cf41baf38fbb296ef72
+    m_Address: icon_ship_star_half
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 7bd7b4e86d8317e47a8ea906d89cc7d6
+    m_Address: icon_status_ok
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: eca5fe05220282944920410bba0cb106
+    m_Address: input_orange_light_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 1307daa2c77c6da4db87abf659b6ca0b
+    m_Address: light_blue_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 9bce0e02a0e0c5a49ae34b4663d28e58
+    m_Address: pic_ribbon_blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 7f3e6109d91124b448002077401e30fd
+    m_Address: pic_ribbon_orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 06559848f359ddd45b2afdb2af78c7ac
+    m_Address: pic_ribbon_red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 8a52bd4ce00564f499c46713f4c96087
+    m_Address: popup_board_blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 1ba95a9647a32a543a6a72cc43d9e323
+    m_Address: popup_board_grey
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 3b30f66a482f9eb48ab3827a17b05e9d
+    m_Address: popup_board_wood
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: fe844c714ab64ed41b95cb0fc2ac7294
+    m_Address: popup_dark_wood_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: b52cec79fadffed45a611e4eb43f0acb
+    m_Address: popup_grey_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: b8a9cf8cef4764245af738564d7b7cb4
+    m_Address: popup_light_orange_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 0e2162ad373d9234a9beaeb3bfad7b97
+    m_Address: popup_light_yellow_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: bc7d0d834f374ae4382c7ac7c8e4a92c
+    m_Address: popup_white_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: f0c274f74b5f11740a16a9f218ff2768
+    m_Address: popup_wood_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 28f12d5a12a21bf4d920d7eea5d50d6a
+    m_Address: popup_yellow_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 70ad6995ffd1a21418ba2b9ec9bb0e3a
+    m_Address: progress_bule_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: a407821c89e6a9f4b804f814d0254ded
+    m_Address: progress_ing_blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: bdd49e18b88bb674d9e6ccc5bba5e62c
+    m_Address: progress_ing_green
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 19456f58af31ec947a7c8aaa4f55328e
+    m_Address: progress_ing_orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 973af9f19a83e604ab0bf2d5234dbf5b
+    m_Address: progress_ing_yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: e8f3d2fbb52b37c42968ad3e4cd8e102
+    m_Address: select_yellow_light
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: c33695a4d7e9dfb4caf928b8f3a0f563
+    m_Address: split _line
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 20c55d1482192fc4aa71b6715a63fa87
+    m_Address: square_grey_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: 7612883bd031ffe45bece807b2fbb014
+    m_Address: square_mask
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: afaf3b875c65d434ba4301b50cbc98c5
+    m_Address: square_white_line_bg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: ea7682b04f919c449b9c8e69471b4b99
+    m_Address: white
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_GlobalUI
+  - m_GUID: bfc3844719b59004c89da7d26d034d2a
+    m_Address: 10001
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_ItemUI
+  - m_GUID: 8815fd5e85a028440a9d124e3ff3e724
+    m_Address: 10002
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_ItemUI
+  - m_GUID: 1aa6918d8e6bc834285921dde0939d7f
+    m_Address: 10003
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_ItemUI
+  - m_GUID: 389be0ae005307844a393f0a4b784e39
+    m_Address: 10101
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_ItemUI
+  - m_GUID: 9eff9bf2141fdee44b461d306617f0cd
+    m_Address: icon_character1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: cdb96e61ba001f540a23cc72cf2578b9
+    m_Address: icon_character2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: d8fead5761b862d4e83f2856a637007b
+    m_Address: icon_character3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: 5476fef7c25f86643950c2e195eeb452
+    m_Address: icon_character4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: 5de8468385958c048958226c38e4322d
+    m_Address: icon_character5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: c3a41483a60340340931e59aca393628
+    m_Address: icon_character6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: 57f027a7d76d2d84389ecac7752bdf4b
+    m_Address: icon_character7
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: 172bcc5e483ca1e409fba614872f9625
+    m_Address: icon_character8
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_RoleUI
+  - m_GUID: 01496eb5bce40e144af6a198976f1bbe
+    m_Address: pic_list_sea1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_SeaAreaUI
+  - m_GUID: 58fcbf21725e7d84091382fc71ca4de8
+    m_Address: icon_status_ship1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_ShipUI
+  - m_GUID: eecdbe7a97c782842a5b194926639aa0
+    m_Address: Blizzard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_WeatherIcon
+  - m_GUID: 30ec12467754b974a944e153e2464189
+    m_Address: Cloudy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_WeatherIcon
+  - m_GUID: 462c4742ea9125d4787bb54c0b5234ea
+    m_Address: Rain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_WeatherIcon
+  - m_GUID: 22043e1f6e97ead4d9bf125ed027a8b7
+    m_Address: RainStorm
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_WeatherIcon
+  - m_GUID: 42d22ec1a8f28e047900be6a44f8d6dc
+    m_Address: Snow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_WeatherIcon
+  - m_GUID: 88b9164bff736734ab1dd25e29feded1
+    m_Address: Sunny
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_Global_WeatherIcon
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

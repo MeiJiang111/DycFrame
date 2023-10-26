@@ -90,6 +90,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
 
     IEnumerator SendActiveLevelEvent()
     {
+        LogUtil.Log("SceneLoader SendActiveLevelEvent");
         yield return null;
 
         LevelActivedEvent?.Invoke();

@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ee8cd5f6ca32dd648aef4862bac144ab
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3e036b2029a85334ba2fff0ce7e94bdb
+    m_Address: SourceHanSansCN-Normal SDF
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Font_CN
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

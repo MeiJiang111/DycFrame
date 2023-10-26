@@ -468,6 +468,8 @@ namespace Feif.UIFramework
 
         private static async Task<GameObject> RequestInstance(Type type, UIData data)
         {
+            LogUtil.Log($"RequestInstance  type = {type} data = {data}");
+          
             if (type == null)
             {
                 throw new NullReferenceException();
@@ -481,7 +483,11 @@ namespace Feif.UIFramework
 
             var refInstance = await OnAssetRequest?.Invoke(type);
             var uibase = refInstance.GetComponent<UIBase>();
-            if (uibase == null) throw new Exception("预制体没有挂载继承自UIBase的脚本");
+            if (uibase == null)
+            {
+                throw new Exception("预制体没有挂载继承自UIBase的脚本");
+            } 
+
             var parent = GetOrCreateLayerTransform(type);
             instance = await UIFrame.Instantiate(refInstance, parent, data);
             instances[type] = instance;

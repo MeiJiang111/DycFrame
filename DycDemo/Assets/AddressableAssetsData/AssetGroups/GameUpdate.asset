@@ -17,10 +17,24 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a2e6e68af86670c499a6141984cbbe7c
   m_SerializeEntries:
+  - m_GUID: c417b9a7c4933664a9c4e2463b613ccb
+    m_Address: bg1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_GameUpdate
+    - GameUpdate
+  - m_GUID: 41f6edbb1c98b4a4a9e4600dcb5767c0
+    m_Address: white
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Atlas_GameUpdate
+    - GameUpdate
   - m_GUID: 27b665df725fd724a8a21922ae5221df
     m_Address: UpdatePanel
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Prefabs_UI_Update
+    - GameUpdate
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

@@ -16,13 +16,15 @@ public class SceneInitialize : MonoBehaviour
 
     private void Awake()
     {
+        LogUtil.Log("场景初始化脚本 Awake");
+
         SceneManager.Instance.RegisterLoadPrefabs(asyncPrefabs, CreatPrefab);
         AudioSourceManager.Instance.CurBGM = bgm;
     }
 
     private void CreatPrefab(string name, GameObject obj, object parmas_)
     {
-        LogUtil.Log("SceneInitialize CreatPrefab");
+        LogUtil.Log("场景初始化脚本 CreatPrefab");
 
         foreach (var item in asyncPrefabs)
         {

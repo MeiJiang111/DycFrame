@@ -9,9 +9,14 @@ public class Global
     public static List<int> PierConfigIds = new List<int>() {210001, 210002};
 
     public const float TOURIST_SPAWN_FREQUENCY = 1f;
+
+    ///Prefab Name
     public const string LOGIN_LEVEL_NAME = "Login";
+    public const string LOGINPANEL = "LoginPanel";
+
     public const string MAIN_LEVEL_NAME = "Main";
     public const string SIGLE_GRID_PREFAB = "SingleGround";
+   
     public const string BOAT_EFFECT = "E_Chuan";
     public const string FISHING_BOAT = "E_YuChuan";
     public const string FISHING_EFFECT = "E_Fish";

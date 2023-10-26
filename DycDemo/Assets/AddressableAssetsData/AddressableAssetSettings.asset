@@ -106,6 +106,19 @@ MonoBehaviour:
     - Audio_Sound
     - Config_Excel
     - Config_Scripteobject
+    - Font_CN
+    - Prefabs_Global
+    - Atlas_Global_GlobalUI
+    - Atlas_Global_ItemUI
+    - Atlas_Global_RoleUI
+    - Atlas_Global_SeaAreaUI
+    - Atlas_Global_ShipUI
+    - Atlas_Global_WeatherIcon
+    - Prefabs_UI_Global
+    - Prefabs_UI_Login
+    - Prefabs_UI_Update
+    - Prefabs_UI_Main_Panel
+    - GameUpdate
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: c6a76323de1349144b636f9399cccfda, type: 2}
