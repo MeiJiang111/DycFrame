@@ -1,12 +1,12 @@
-using Feif.UIFramework;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using System;
 using Feif.UI;
+using Feif.UIFramework;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.AddressableAssets;
+
 
 public class LoginInitialize : MonoBehaviour
 {
@@ -61,11 +61,13 @@ public class LoginInitialize : MonoBehaviour
         return handles[type].Result;
     }
 
-       
     // 资源释放事件
     private void OnAssetRelease(Type type)
     {
-        // TODO
+        if (handles.ContainsKey(type))
+        {
+            Addressables.Release(handles[type]);
+        }
     }
 
     private void OnStuckStart()

@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 
 //控制主场景相机的运动  先快速实现一个 后续要处理 ui相关的
-public class CameraController : ASingleton<CameraController>
+public class CameraController : MonoSingleton<CameraController>
 {
     private float panSpeed;
     [SerializeField]
@@ -114,9 +114,9 @@ public class CameraController : ASingleton<CameraController>
         ignoreMove = start_;
     }
 
-    protected override void OnDestroy()
+    private void OnDestroy()
     {
-        base.OnDestroy();
+        //base.OnDestroy();
         //var gameMgr = GameManager.Instance;
         //if (gameMgr != null)
         //{

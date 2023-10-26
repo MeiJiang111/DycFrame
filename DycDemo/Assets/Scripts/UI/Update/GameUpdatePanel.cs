@@ -21,20 +21,10 @@ public class GameUpdatePanel : MonoBehaviour
     {
         textLabel.text = string.Empty;
         SliderValue = 0;
+
         var update = GameUpdate.Instance;
         update.UpdateStateChangedEvent += OnUpdateStateChanged;
         update.DownLoadProcessChangeEvent += OnDownLoadProcessChanged;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
     }
 
     private void OnDownLoadProcessChanged(float obj)

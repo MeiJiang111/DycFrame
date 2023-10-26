@@ -104,14 +104,11 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     void CreatPrefabFaild(string name)
     {
-        //asyncLoadedNum++;
-        //var _info = SceneAsyncPrefabs.Find(name);
-        //if (string.IsNullOrEmpty(_info.name))
-        //{
-        //    LogUtil.LogWarningFormat("Creat prefab {0} Faild but not exists!!!", name);
-        //    return;
-        //}
-        //_info.CreatFaild?.Invoke(name);
+        if (string.IsNullOrEmpty(name))
+        {
+            LogUtil.LogWarningFormat("Creat prefab {0} Faild but not exists!!!", name);
+            return;
+        }
     }
 
 
