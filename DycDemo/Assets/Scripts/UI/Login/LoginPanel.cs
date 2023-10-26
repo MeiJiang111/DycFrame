@@ -61,8 +61,12 @@ namespace Feif.UI
         private void LoginBtnClick()
         {
             UIFrame.Hide(this);
-            var data = new LoadingPanelData();
-            UIFrame.Show<LoadingPanel>(data);
+
+            //var data = new LoadingPanelData();
+            //UIFrame.Show<LoadingPanel>(data);
+
+            var data = new MainPanelData();
+            UIFrame.Show<MainPanel>(data);
         }
     }
 }

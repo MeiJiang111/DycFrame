@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Feif.UIFramework;
-
+using TMPro;
 
 namespace Feif.UI 
 {
@@ -15,6 +15,9 @@ namespace Feif.UI
     [PanelLayer] 
     public class LoadingPanel : UIComponent<LoadingPanelData>
     {
+        public Slider slider;
+        public TextMeshProUGUI pectText;
+
         protected override Task OnCreate()
         {
           

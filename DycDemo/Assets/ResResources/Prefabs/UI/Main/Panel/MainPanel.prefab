@@ -2456,6 +2456,7 @@ GameObject:
   - component: {fileID: 7849685898428073448}
   - component: {fileID: 4757289102988326366}
   - component: {fileID: -7384740994331570060}
+  - component: {fileID: 6742800745363797039}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -2519,6 +2520,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   isResident: 0
+--- !u!114 &6742800745363797039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686519340857729194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dffca1c1ac59a424cb9799147fd94544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoDestroy: 1
+  Parent: {fileID: 0}
+  Children: []
 --- !u!1 &3774729084436614526
 GameObject:
   m_ObjectHideFlags: 0

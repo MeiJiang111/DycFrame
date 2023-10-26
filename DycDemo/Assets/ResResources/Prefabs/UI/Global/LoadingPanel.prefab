@@ -581,3 +581,5 @@ MonoBehaviour:
   AutoDestroy: 1
   Parent: {fileID: 0}
   Children: []
+  slider: {fileID: 0}
+  pectText: {fileID: 0}
