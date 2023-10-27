@@ -22,7 +22,6 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
                 }
             }
 
-            //LogUtil.LogFormat($"instance_ = {instance_.name}");
             return instance_;
         }
     }

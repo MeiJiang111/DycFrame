@@ -16,10 +16,21 @@ public class LogUtil
         Debug.Log(log_);
     }
 
+    /// <summary>
+    /// ∏ﬂ¡¡
+    /// </summary>
+    /// <param name="log_"></param>
+    /// <param name="color"></param>
+    public static void Log(object log_,int color)
+    {
+        Debug.Log(log_);
+    }
+
     public static void LogFormat(string log_, params object[] args)
     {
         Debug.LogFormat(log_, args);
     }
+
     public static void LogWarning(object log_)
     {
         Debug.LogWarning(log_);
@@ -29,6 +40,7 @@ public class LogUtil
     {
         Debug.LogWarningFormat(log_, args);
     }
+
     public static void LogError(object log_)
     {
         Debug.LogError(log_);

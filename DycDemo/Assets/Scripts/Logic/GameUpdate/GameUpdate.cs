@@ -12,19 +12,26 @@ public class GameUpdate:MonoSingleton<GameUpdate>
         None,
         Init,                      //初始化
         VerifyVersion,             //验证
-        VerifyVersionSuccess,
+        VerifyVersionSuccess,      //验证成功
         Download,                  //下载
         Finish,                    //结束
         Failed,                    //失败
     }
 
+    /// <summary>
+    /// 游戏资源更新状态
+    /// </summary>
     public Action<UpdateState> UpdateStateChangedEvent;
+
+    /// <summary>
+    /// 游戏资源加载进度
+    /// </summary>
     public Action<float> DownLoadProcessChangeEvent;
 
     UpdateState _state;
     string _lastName;
     string _lastErr;
-   
+     
     List<string> updateCatalogs;
     Coroutine updateCoroution;
 
@@ -44,14 +51,12 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 
     protected override void Awake()
     {
-        LogUtil.Log("GameUpdate Awake");
-
         _state = UpdateState.None;
         updateCatalogs = new List<string>();
     }
 
     /// <summary>
-    /// 游戏更新
+    /// 执行更新
     /// </summary>
     /// <param name="update_"></param>
     public void StartGameUpdate(bool update_ = true)
@@ -59,6 +64,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 #if UNITY_EDITOR
         if (!update_)
         {
+            LogUtil.Log("GameUpdate StartGameUpdate update_ ==" + update_);
             CurState = UpdateState.Finish;
             //编辑器下可以跳过更新
             UpdateFinished();

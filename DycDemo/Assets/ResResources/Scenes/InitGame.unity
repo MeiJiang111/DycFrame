@@ -541,7 +541,7 @@ MonoBehaviour:
   ShowFrame: 1
   TargetFrame: 1000
   update: 1
-  firstLoadPrefabs:
+  prefabList:
   - name: GameManager
     pos: {x: 0, y: 0, z: 0}
 --- !u!114 &1380327777

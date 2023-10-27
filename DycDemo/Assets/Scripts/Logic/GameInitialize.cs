@@ -7,28 +7,26 @@ using Feif.UIFramework;
 public class GameInitialize : MonoSingleton<GameInitialize>
 {
     [Serializable]
-    public struct LoadPrefabConfig
+    public struct PrefabConfig
     {
         public string name;
         public Vector3 pos;
     }
 
-    public bool ShowFrame;                    //显示帧数
-    public int TargetFrame;                   //限定帧数
-   
-    [Header("开启更新")] public bool update;
-    public List<LoadPrefabConfig> firstLoadPrefabs;
-    public event Action GameInitEvent;
+    public bool ShowFrame;           //显示帧数        
+    public int TargetFrame;          //限定帧数       
 
+    [Header("开启更新")] public bool update;
+    public List<PrefabConfig> prefabList;
+    public event Action GameInitEvent;
 
     protected override void Awake()
     {
         base.Awake();
-        LogUtil.Log("GameInitialize Awake");
 
         Application.targetFrameRate = TargetFrame;
         Application.runInBackground = true;
-       
+        
         if (ShowFrame)
         {
             gameObject.AddComponent<FrameRate>();
@@ -37,22 +35,17 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
     private void Start()
     {
-        LogUtil.Log("GameInitialize Start");
         GameUpdate.Instance.StartGameUpdate(update);
     }
 
-    //进入游戏
     public IEnumerator EnterGame()
     {
-        LogUtil.Log("GameInitialize EnterGame");
-        var resourMgr = ResourceManager.Instance;
         int count = 0;
-        count = firstLoadPrefabs.Count;
-        foreach (var item in firstLoadPrefabs)
+        count = prefabList.Count;
+        foreach (var item in prefabList)
         {
-            resourMgr.CreatInstanceAsync(item.name, (obj, parma) =>
+            ResourceManager.Instance.CreatInstanceAsync(item.name, (obj, parma) =>
             {
-                LogUtil.Log("GameInitialize EnterGame success = " + obj + "  " + parma);
                 obj.name = item.name;
                 obj.transform.localPosition = item.pos;
                 count--;
@@ -65,7 +58,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
         }
 
         UIFrame.Instance.RegisterListener();
-        LogUtil.Log("GameInitialize GameInitialize Loading Finish !!!");
+        LogUtil.Log("GameInitialize Loading Finish !!!");
        
         yield return new WaitForEndOfFrame();
 
