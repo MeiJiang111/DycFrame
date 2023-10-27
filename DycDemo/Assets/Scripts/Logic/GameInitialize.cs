@@ -62,6 +62,6 @@ public class GameInitialize : MonoSingleton<GameInitialize>
        
         yield return new WaitForEndOfFrame();
 
-        SceneManager.Instance.StartLevel(Global.LOGIN_LEVEL_NAME);
+        SceneManager.Instance.StartChangeScene(Global.LOGIN_SCENE_NAME);
     }
 }

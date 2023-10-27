@@ -1,22 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-public struct AsyncPrefabs
+public struct AsyncPrefabData
 {
     public string name;
-
-    /// <summary>
-    /// 创建成功
-    /// </summary>
     public Action<string, GameObject, object> CreatSuccess;
-
-    /// <summary>
-    /// 创建失败
-    /// </summary>
     public Action<string> CreatFaild;
 }
 
@@ -25,21 +16,27 @@ public struct AsyncPrefabs
 public class SceneManager : MonoSingleton<SceneManager>
 {
     SceneLoader sceneLoader;
-    List<AsyncPrefabs> SceneAsyncPrefabs;
-  
-    public Action<string> StartLoadingNewLevelEvent;
-    public Action LevelLoadedEvent;
-    public Action LevelPreStartEvent;
-    public Action LevelStartEvent;
-   
-    public string CurLevel { get; private set; }
-    public bool IsMainLevel => (CurLevel == Global.MAIN_LEVEL_NAME);
-   
+    List<AsyncPrefabData> SceneAsyncPrefabs;
+
+    public Action<string> SceneMgrStartLoadingNewSceneEvent;
+    public Action SceneMgrLoadedEvent;
+    public Action SceneMgrPreStartEvent;
+    public Action SceneMgrStartEvent;
+
+    public bool _isStart;
+    string _newScene;
+    bool _autoActive;
+    int _sceneStartWaitCount = 0;
+    int asyncLoadedNum;
+
+    public bool SceneIsStart => _isStart;
+    public string CurScene { get; private set; }
+    public bool IsMainLevel => (CurScene == Global.MAIN_SCENE_NAME);
     public bool LevelStartPaused
     {
         get
         {
-            if (_levelStartWaitCount > 0) 
+            if (_sceneStartWaitCount > 0) 
             {
                 return true;
             }
@@ -47,33 +44,26 @@ public class SceneManager : MonoSingleton<SceneManager>
         }
     }
 
-    public bool _isStart;
-    string _newScene;
-    bool _autoActive;
-    int _levelStartWaitCount = 0;
-    int asyncLoadedNum;
     public float AsyncLoadingPct => asyncLoadedNum * 1f / SceneAsyncPrefabs.Count;
    
    
     protected override void Awake()
     {
         base.Awake();
-        LogUtil.Log("SceneManager Awake");
-
+        
         sceneLoader = SceneLoader.Instance;
-        sceneLoader.LevelStartLoadEvent += OnLevelStartLoad;
-        sceneLoader.LevelLoadedEvent += OnLevelLoaded;
-        sceneLoader.LevelActivedEvent += OnLevelActived;
-        SceneAsyncPrefabs = new List<AsyncPrefabs>();
+        sceneLoader.SceneLoadStartEvent += OnSceneLoadStart;
+        sceneLoader.SceneLoadedEvent += OnSceneLoaded;
+        sceneLoader.SceneLoadActivedEvent += OnSceneLoadActived;
+        SceneAsyncPrefabs = new List<AsyncPrefabData>();
     }
 
     public void RegisterLoadPrefabs(List<AsyncPrefabInfo> prefabs, Action<string, GameObject, object> success, Action<string> faild = null)
     {
-        
         foreach (var item in prefabs)
         {
-            LogUtil.Log("item == " + item.Name);
-            SceneAsyncPrefabs.Add(new AsyncPrefabs() { name = item.Name, CreatSuccess = success, CreatFaild = faild });
+            LogUtil.Log("new scene prefab name == " + item.Name);
+            SceneAsyncPrefabs.Add(new AsyncPrefabData() { name = item.Name, CreatSuccess = success, CreatFaild = faild });
         }
     }
 
@@ -81,10 +71,8 @@ public class SceneManager : MonoSingleton<SceneManager>
     {
         asyncLoadedNum++;
         var trueName = obj.name.Replace(Global.Clone_Str, "");
-        LogUtil.Log("trueName == " + trueName);
-
-  
-        AsyncPrefabs asyncPrefabs = new AsyncPrefabs();
+       
+        AsyncPrefabData asyncPrefabs = new AsyncPrefabData();
         foreach (var item in SceneAsyncPrefabs)
         {
             if (item.name.Equals(trueName))
@@ -93,7 +81,6 @@ public class SceneManager : MonoSingleton<SceneManager>
             }
         }
 
-        LogUtil.Log("asyncPrefabs == " + asyncPrefabs);
         if (string.IsNullOrEmpty(asyncPrefabs.name))
         {
             LogUtil.LogWarningFormat("Creat prefab {0} success but not exists!!!", trueName);
@@ -104,28 +91,29 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     void CreatPrefabFaild(string name)
     {
-        if (string.IsNullOrEmpty(name))
-        {
-            LogUtil.LogWarningFormat("Creat prefab {0} Faild but not exists!!!", name);
-            return;
-        }
+        LogUtil.LogWarningFormat("creat prefab {0} Faild !!!", name);
     }
 
-
     #region 加载场景
-    public bool StartLevel(string name_, bool autoActive = true)
+    /// <summary>
+    /// 切换场景
+    /// </summary>
+    /// <param name="name_"></param>
+    /// <param name="autoActive"></param>
+    /// <returns></returns>
+    public bool StartChangeScene(string name_, bool autoActive = true)
     {
-        LogUtil.Log("SceneManager StartLevel");
+        LogUtil.Log("SceneManager StartChangeScene 111");
         if (sceneLoader.InLoading)
         {
-            LogUtil.LogWarningFormat("Call attempted to LoadLevel {0} while a level is already in the process of loading; ignoring the load request...", sceneLoader.LoadingLevel);
+            LogUtil.LogWarningFormat("call attempted to LoadScene {0} while a scene is already in the process of loading; ignoring the load request...", sceneLoader.LoadingLevel);
             return false;
         }
 
         _isStart = false;
         _autoActive = autoActive;
         _newScene = name_;
-        _levelStartWaitCount = 0;
+        _sceneStartWaitCount = 0;
         SceneAsyncPrefabs.Clear();
         asyncLoadedNum = 0;
         StopAllCoroutines();
@@ -135,65 +123,45 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     IEnumerator StartSceneImple()
     {
-        LogUtil.Log("SceneManager StartLevelImple");
+        LogUtil.Log("SceneManager StartSceneImple 222");
+        //SceneMgrStartLoadingNewSceneEvent?.Invoke(_newScene);
         yield return null;
-        //StartLoadingNewLevelEvent?.Invoke(_newScene);
-        //yield return null;
-        sceneLoader.LoadLevelAsync(_newScene, _autoActive);
-    }
-
-    public void ActiveLevel()
-    {
-        if (string.IsNullOrEmpty(_newScene))
-        {
-            return;
-        }
-      
-        if (!sceneLoader.LevelActived)
-        {
-            StartCoroutine(sceneLoader.ActiveLevel());
-        }
+        sceneLoader.OnAsyncLoadScene(_newScene, _autoActive);
     }
     #endregion
 
 
-    #region 事件
-    private void OnLevelStartLoad()
+    #region SceneLoader 事件执行
+    private void OnSceneLoadStart()
     {
-
+        
+    }
+            
+    private void OnSceneLoaded()
+    {
+        LogUtil.Log("SceneManager OnSceneLoaded Action 666");
+        CurScene = _newScene;
+        SceneMgrLoadedEvent?.Invoke();
     }
 
-
-    private void OnLevelLoaded()
+    private void OnSceneLoadActived()
     {
-        CurLevel = _newScene;
-        LevelLoadedEvent?.Invoke();
-
-        if (!sceneLoader.AutoActive && _autoActive)
-        {
-            StartCoroutine(sceneLoader.ActiveLevel());
-        }
-    }
-
-    private void OnLevelActived()
-    {
-        LogUtil.Log("OnLevelActived 加载场景成功以后开始创建预制 11");
+        LogUtil.Log("SceneManager OnSceneLoadActived Action 10 10 10");
         foreach (var item in SceneAsyncPrefabs)
         {
             ResourceManager.Instance.CreatInstanceAsync(item.name, CreatPrefabSuccess, CreatPrefabFaild);
         }
 
         _autoActive = false;
-        StartCoroutine(LevelStart());
+        StartCoroutine(IenumSceneStart());
     }
 
-    IEnumerator LevelStart()
+    IEnumerator IenumSceneStart()
     {
-        LogUtil.Log("LevelStart 加载场景成功以后开始创建预制 22");
-
+        LogUtil.Log("SceneManager IenumSceneStart Action 11 11 11");
         yield return null;
         _isStart = false;
-        LevelPreStartEvent?.Invoke();
+        SceneMgrPreStartEvent?.Invoke();
 
         while (LevelStartPaused)
         {
@@ -202,17 +170,18 @@ public class SceneManager : MonoSingleton<SceneManager>
 
         yield return new WaitForEndOfFrame();
         _isStart = true;
-        LevelStartEvent?.Invoke();
+        SceneMgrStartEvent?.Invoke();
     }
     #endregion
 
+
     public void PauseLevelStart()
     {
-        _levelStartWaitCount++;
+        _sceneStartWaitCount++;
     }
 
     public void ResumeLevelStart()
     {
-        _levelStartWaitCount = Mathf.Max(_levelStartWaitCount - 1, 0);
+        _sceneStartWaitCount = Mathf.Max(_sceneStartWaitCount - 1, 0);
     }
 }

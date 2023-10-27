@@ -51,6 +51,14 @@ MonoBehaviour:
     m_Address: LoginInitialize
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 6d93d93d01bbd7446a313a9e71cc4105
+    m_Address: MainBluePrint
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3e171dc4d95a5d94791e4a31402a25c3
+    m_Address: LoginBluePrint
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:

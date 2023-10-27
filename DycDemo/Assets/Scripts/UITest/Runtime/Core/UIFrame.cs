@@ -6,6 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using Feif.Extensions;
+using static UnityEditor.Progress;
+using System.Collections;
+using UnityEngine.UI;
 
 namespace Feif.UIFramework
 {
@@ -55,10 +58,13 @@ namespace Feif.UIFramework
             }
         }
 
+        public float CanvasOffset { get; private set; }
+
+
         protected override void Awake()
         {
             base.Awake();
-            LogUtil.Log("UIFrame Awake");
+            //LogUtil.Log("UIFrame Awake");
 
             if (canvas == null)
             {
@@ -86,6 +92,10 @@ namespace Feif.UIFramework
 
         public void RegisterListener()
         {
+            var sceneMgr = SceneManager.Instance;
+            sceneMgr.SceneMgrStartLoadingNewSceneEvent += OnLoadNewScene;
+            sceneMgr.SceneMgrLoadedEvent += OnSceneMgrLoaded;
+            sceneMgr.SceneMgrPreStartEvent += OnScenePreStart;
             Camera = CameraController.Instance.uiCamera;
         }
 
@@ -287,10 +297,13 @@ namespace Feif.UIFramework
         {
             foreach (var item in instances)
             {
-                if (predicate != null && !predicate.Invoke(item.Key)) continue;
-
+                if (predicate != null && !predicate.Invoke(item.Key)) 
+                {
+                    continue;
+                } 
                 yield return item.Value.GetComponent<UIBase>();
             }
+            LogUtil.Log("获得所有已经实例化的UI  == " + instances.Count);
         }
 
         /// <summary>
@@ -892,5 +905,42 @@ namespace Feif.UIFramework
             }
             return result;
         }
+
+        #region 場景加载事件
+        private void OnLoadNewScene(string obj)
+        {
+            
+        }
+
+        private void OnSceneMgrLoaded()
+        {
+            LogUtil.Log("UIFrame OnSceneMgrLoaded Action 777");
+            SceneManager.Instance.PauseLevelStart();
+            StartCoroutine(SceneLoadedImple());
+        }
+
+        IEnumerator SceneLoadedImple()
+        {
+            LogUtil.Log("UIFrame SceneLoadedImple  888");
+            yield return null;
+            SceneManager.Instance.ResumeLevelStart();
+        }
+
+        private void OnScenePreStart()
+        {
+            CalculateCanvasOffset();
+        }
+
+        void CalculateCanvasOffset()
+        {
+            CanvasScaler canvasScaler = transform.GetComponent<CanvasScaler>();
+            //实际画布的宽高
+            float resolutionX = canvasScaler.referenceResolution.x;
+            float resolutionY = canvasScaler.referenceResolution.y;
+            //计算缩放比
+            CanvasOffset = (Screen.width / resolutionX) * (1 - canvasScaler.matchWidthOrHeight) + (Screen.height / resolutionY) * canvasScaler.matchWidthOrHeight;
+        }
+
+        #endregion
     }
 }

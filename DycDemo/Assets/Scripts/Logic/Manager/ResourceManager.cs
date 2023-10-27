@@ -9,7 +9,6 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 
 public class ResourceManager : ASingleton<ResourceManager>
 {
-
     public bool PreLoadFinish { get; private set; }
 
     public event Action<AsyncOperationHandle, Exception> AddressableErrorEvent;
@@ -21,6 +20,7 @@ public class ResourceManager : ASingleton<ResourceManager>
     protected override void Awake()
     {
         base.Awake();
+       
         dic = new Dictionary<string, AsyncOperationHandle>();
         UnityEngine.ResourceManagement.ResourceManager.ExceptionHandler += AddressablesException;
     }
@@ -52,42 +52,6 @@ public class ResourceManager : ASingleton<ResourceManager>
             LogUtil.LogErrorFormat("{0} Load Faild !!!", name_);
             SubWaiteCount();
         });
-
-        /*
-        var gridBuildMgr = GameManager.Instance.GetManager<GridBuildSystemManager>();
-
-        LoadAsset<GridsConfig>(Global.TOWN_GRIDS_CONFIG, (config, parma) =>
-        {
-            gridBuildMgr.OnGridsConfigLoaded(config, parma);
-            SubWaiteCount();
-        }, (name_) =>
-        {
-            LogUtil.LogErrorFormat("{0} load faild!!!", name_);
-            SubWaiteCount();
-        });
-
-        var weatherMgr = GameManager.Instance.GetManager<WeatherManager>();
-        LoadAsset<WeatherConfigs>(Global.WEATHER_CONFIG, (config, parma) =>
-        {
-            weatherMgr.OnWeatherConfigLoaded(config, parma);
-            SubWaiteCount();
-        }, (name_) =>
-        {
-            LogUtil.LogErrorFormat("{0} load faild!!!", name_);
-            SubWaiteCount();
-        });
-
-        var navigationMgr = GameManager.Instance.GetManager<NavigationManager>();
-        LoadAsset<CharacterConfigs>(Global.CHARACTER_CONFIG, (config, parma) =>
-        {
-            navigationMgr.OnCharacterConfigLoaded(config, parma);
-            SubWaiteCount();
-        }, (name_) =>
-        {
-            LogUtil.LogErrorFormat("{0} load faild!!!", name_);
-            SubWaiteCount();
-        });
-        */
     }
    
     void SubWaiteCount()

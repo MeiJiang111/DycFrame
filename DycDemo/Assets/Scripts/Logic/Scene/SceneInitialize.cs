@@ -11,22 +11,21 @@ public struct AsyncPrefabInfo
 /// 场景初始化脚本
 public class SceneInitialize : MonoBehaviour
 {
-    public List<AsyncPrefabInfo> asyncPrefabs;
+    public List<AsyncPrefabInfo> asyncPrefabList;
     public string bgm;
 
     private void Awake()
     {
-        LogUtil.Log("场景初始化脚本 Awake");
+        LogUtil.Log("SceneInitialize Awake");
 
-        SceneManager.Instance.RegisterLoadPrefabs(asyncPrefabs, CreatPrefab);
+        SceneManager.Instance.RegisterLoadPrefabs(asyncPrefabList, CreatPrefab, CreatPrefabFaild);
         AudioSourceManager.Instance.CurBGM = bgm;
     }
 
     private void CreatPrefab(string name, GameObject obj, object parmas_)
     {
-        LogUtil.Log("场景初始化脚本 CreatPrefab");
-
-        foreach (var item in asyncPrefabs)
+        LogUtil.Log("SceneInitialize CreatPrefab");
+        foreach (var item in asyncPrefabList)
         {
             if (item.Name.Equals(name))
             {
@@ -34,5 +33,10 @@ public class SceneInitialize : MonoBehaviour
                 obj.transform.localPosition = item.Pos;
             }
         }
+    }
+
+    private void CreatPrefabFaild(string name_)
+    {
+
     }
 }

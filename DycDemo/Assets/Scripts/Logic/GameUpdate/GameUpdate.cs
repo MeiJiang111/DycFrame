@@ -64,7 +64,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 #if UNITY_EDITOR
         if (!update_)
         {
-            LogUtil.Log("GameUpdate StartGameUpdate update_ ==" + update_);
+            LogUtil.Log("UNITY_EDITOR GameUpdate StartGameUpdate ==" + update_);
             CurState = UpdateState.Finish;
             //编辑器下可以跳过更新
             UpdateFinished();
@@ -100,7 +100,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 
         CurState = UpdateState.VerifyVersion;
         var handler = Addressables.CheckForCatalogUpdates(false);
-        LogUtil.Log("GameUpdate StartGameUpdateImple handler == " + handler.Status);
+        //LogUtil.Log("GameUpdate StartGameUpdateImple handler == " + handler.Status);
         yield return handler;
 
         if (handler.Status != AsyncOperationStatus.Succeeded ||
@@ -114,6 +114,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
        
         updateCatalogs = handler.Result;
         Addressables.Release(handler);
+       
         if (updateCatalogs.Count > 0)
         {
             CurState = UpdateState.Download;
@@ -159,6 +160,7 @@ public class GameUpdate:MonoSingleton<GameUpdate>
             }
             Addressables.Release(downloadHandle);
         }
+
         CurState = UpdateState.Finish;
         Addressables.Release(updateHandler);
         DownLoadProcessChangeEvent?.Invoke(1);

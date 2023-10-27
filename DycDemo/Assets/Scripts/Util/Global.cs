@@ -10,13 +10,17 @@ public class Global
 
     public const float TOURIST_SPAWN_FREQUENCY = 1f;
 
+    ///Scene Name
+    public const string LOGIN_SCENE_NAME = "Login";
+    public const string MAIN_SCENE_NAME = "Main";
+
     ///Prefab Name
-    public const string LOGIN_LEVEL_NAME = "Login";
     public const string LOGINPANEL = "LoginPanel";
 
-    public const string MAIN_LEVEL_NAME = "Main";
-    public const string SIGLE_GRID_PREFAB = "SingleGround";
    
+    public const string SIGLE_GRID_PREFAB = "SingleGround";
+
+    ///Effect Name
     public const string BOAT_EFFECT = "E_Chuan";
     public const string FISHING_BOAT = "E_YuChuan";
     public const string FISHING_EFFECT = "E_Fish";
@@ -32,6 +36,7 @@ public class Global
     public const string WEATHER_CONFIG = "WeatherConfig";
     public const string CHARACTER_CONFIG = "CharacterConfigs";
 
+    ///Common 
     public const string Clone_Str = "(Clone)";
 
 

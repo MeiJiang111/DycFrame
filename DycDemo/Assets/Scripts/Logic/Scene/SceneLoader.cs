@@ -7,111 +7,94 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoSingleton<SceneLoader>
 {
-    public Action LevelStartLoadEvent;
-    public Action LevelLoadedEvent;
-    public Action LevelActivedEvent;
+    public Action SceneLoadStartEvent;
+    public Action SceneLoadedEvent;
+    public Action SceneLoadActivedEvent;
+
+    /// <summary>
+    /// 界面加载成功显示
+    /// </summary>
+    bool _actived;
+    string _lastScene = string.Empty;
+    string _newScene = string.Empty;
 
     public bool InLoading { get; private set; }
-    public string CurLevel { get; private set; }
-    public string LoadingLevel => _newLevel;
+    public string CurrScene { get; private set; }
     public bool AutoActive { get; private set; }
     public bool LevelActived => _actived;
-    string _newLevel = string.Empty;
-    bool _actived;
-    string _lastLevel = string.Empty;
+    public string LoadingLevel => _newScene;
+
     SceneInstance _loadScene;
     SceneInstance _preScene;
 
 
     protected override void Awake()
     {
-    
         base.Awake();
-        LogUtil.Log("SceneLoader Awake");
-
+       
         InLoading = false;
-        _lastLevel = string.Empty;
+        _lastScene = string.Empty;
     }
 
     /// <summary>
-    /// 加载Scene
+    /// 异步加载Scene
     /// </summary>
     /// <param name="name_"></param>
     /// <param name="autoActive_"></param>
-    public void LoadLevelAsync(string name_, bool autoActive_ = true)
+    public void OnAsyncLoadScene(string name_, bool autoActive_ = true)
     {
-        LogUtil.Log("SceneLoader LoadLevelAsync");
+        LogUtil.Log("SceneLoader OnAsyncLoadScene 333");
         if (InLoading)
         {
-            LogUtil.LogWarningFormat("{0} level is loading ,can not load new level!", _newLevel);
+            LogUtil.LogWarningFormat("have scene is loading ,can not load scene {0}!", name_);
             return;
         }
 
-        LevelStartLoadEvent?.Invoke();
-        _lastLevel = _newLevel;
-        _newLevel = name_;
+        //SceneLoadStartEvent?.Invoke();
+        _newScene = name_;
         _preScene = _loadScene;
         AutoActive = autoActive_;
         _actived = false;
-        Addressables.LoadSceneAsync(_newLevel, LoadSceneMode.Single, AutoActive).Completed += OnLevelLoaded;
+        Addressables.LoadSceneAsync(_newScene, LoadSceneMode.Single, AutoActive).Completed += OnSceneLoaded;
     }
 
-    private void OnLevelLoaded(AsyncOperationHandle<SceneInstance> handle_)
+    private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> handle_)
     {
-        LogUtil.Log("SceneLoader OnLevelLoaded 加载场景成功以后的回调");
-       
+        LogUtil.Log("SceneLoader OnSceneLoaded 444");
         InLoading = false;
         if (handle_.Status != AsyncOperationStatus.Succeeded)
         {
-            LogUtil.LogErrorFormat("LoadLevel {0} failed", _newLevel);
-            _newLevel = string.Empty;
+            LogUtil.LogErrorFormat("local scene {0} failed", _newScene);
+            _newScene = string.Empty;
             return;
         }
 
         _loadScene = handle_.Result;
+        LogUtil.Log("SceneLoader OnSceneLoaded _loadScene 555 == " + _loadScene.Scene.name);
+      
         if (AutoActive)
         {
             _actived = true;
-            CurLevel = _newLevel;
-            _newLevel = string.Empty;
-            if (!string.IsNullOrEmpty(_lastLevel))
+            CurrScene = _newScene;
+            _newScene = string.Empty;
+            if (!string.IsNullOrEmpty(_lastScene))
             {
                 Addressables.UnloadSceneAsync(_preScene);
-                _lastLevel = string.Empty;
+                _lastScene = string.Empty;
             }
         }
-        LevelLoadedEvent?.Invoke();
+        SceneLoadedEvent?.Invoke();
 
         if (AutoActive)
         {
-            StartCoroutine(SendActiveLevelEvent());
+            StartCoroutine(SendActiveSceneEvent());
         }
     }
 
-    IEnumerator SendActiveLevelEvent()
+    IEnumerator SendActiveSceneEvent()
     {
-        LogUtil.Log("SceneLoader SendActiveLevelEvent");
+        LogUtil.Log("SceneLoader SendActiveSceneEvent 999");
         yield return null;
-
-        LevelActivedEvent?.Invoke();
-    }
-
-    public IEnumerator ActiveLevel()
-    {
-        yield return null;
-
-        if (_actived)
-        {
-            LogUtil.LogWarning("can not need activeLevel!");
-        }
-        else
-        {
-            var handle = _loadScene.ActivateAsync();
-            yield return handle;
-            _actived = true;
-            CurLevel = _newLevel;
-            _newLevel = string.Empty;
-            LevelActivedEvent?.Invoke();
-        }
+        SceneLoadActivedEvent?.Invoke();
     }
 }

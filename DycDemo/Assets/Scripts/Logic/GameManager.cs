@@ -66,7 +66,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             mgr.Value.OnStart();
         }
-        SceneManager.Instance.StartLevel(Global.MAIN_LEVEL_NAME);
+        SceneManager.Instance.StartChangeScene(Global.MAIN_SCENE_NAME);
     }
 
     public void PlayerLoginIn(bool init_)
@@ -98,7 +98,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void OnApplicationQuit()
     {
-        if (curLevelName == Global.MAIN_LEVEL_NAME)
+        if (curLevelName == Global.MAIN_SCENE_NAME)
             Save();
     }
 
