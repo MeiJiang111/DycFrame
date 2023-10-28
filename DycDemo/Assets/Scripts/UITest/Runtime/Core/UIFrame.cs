@@ -483,7 +483,7 @@ namespace Feif.UIFramework
         private static async Task<GameObject> RequestInstance(Type type, UIData data)
         {
             LogUtil.Log($"RequestInstance  type = {type} data = {data}");
-          
+ 
             if (type == null)
             {
                 throw new NullReferenceException();
@@ -917,19 +917,17 @@ namespace Feif.UIFramework
         {
             LogUtil.Log("UIFrame OnSceneMgrLoading Action 555");
             //todo 如果有未关闭的界面 则close
-           
         }
 
         private void OnScenePrecentLoad()
         {
+            LogUtil.Log("UIFrame OnScenePrecentLoad Action 12 12 12");
             SceneManager.Instance.PauseLevelStart();
             StartCoroutine(SceneLoadedImple());
-          
         }
 
         IEnumerator SceneLoadedImple()
         {
-            LogUtil.Log("UIFrame SceneLoadedImple  999");
             yield return null;
             SceneManager.Instance.ResumeLevelStart();
         }

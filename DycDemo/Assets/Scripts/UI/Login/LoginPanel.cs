@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Feif.UIFramework;
 using Feif.UI.Data;
+using System;
 
 namespace Feif.UI
 {
@@ -17,7 +18,11 @@ namespace Feif.UI
         public Button loginBtn;
         public InputField account;
         public InputField password;
-
+        public GameObject updataPanel;
+        private void Awake()
+        {
+            Debug.Log("LoginPanel Awake");
+        }
 
         protected override Task OnCreate()
         {
@@ -27,44 +32,40 @@ namespace Feif.UI
 
         protected override void OnBind()
         {
-            Debug.Log("LoginPanel OnBind");
+            //Debug.Log("LoginPanel OnBind");
             loginBtn.onClick.AddListener(LoginBtnClick);
         }
 
         protected override Task OnRefresh()
         {
-            Debug.Log("LoginPanel OnRefresh");
+            //Debug.Log("LoginPanel OnRefresh");
             return Task.CompletedTask;
         }
 
         protected override void OnUnbind()
         {
-            Debug.Log("LoginPanel OnUnbind");
+            //Debug.Log("LoginPanel OnUnbind");
             loginBtn.onClick.RemoveListener(LoginBtnClick);
         }
 
         protected override void OnShow()
         {
-            Debug.Log("LoginPanel OnShow");
+            //Debug.Log("LoginPanel OnShow");
         }
 
         protected override void OnHide()
         {
-            Debug.Log("LoginPanel OnHide");
+            //Debug.Log("LoginPanel OnHide");
         }
 
         protected override void OnDied()
         {
-            Debug.Log("LoginPanel OnDied");
+            //Debug.Log("LoginPanel OnDied");
         }
 
         private void LoginBtnClick()
         {
             UIFrame.Hide(this);
-
-            //var data = new LoadingPanelData();
-            //UIFrame.Show<LoadingPanel>(data);
-
             var data = new MainPanelData();
             UIFrame.Show<MainPanel>(data);
         }

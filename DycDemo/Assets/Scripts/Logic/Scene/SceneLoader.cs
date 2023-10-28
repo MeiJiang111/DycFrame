@@ -48,7 +48,6 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     /// <param name="autoActive_"></param>
     public void OnAsyncLoadScene(string name_, bool autoActive_ = true)
     {
-        LogUtil.Log("SceneLoader OnAsyncLoadScene 333");
         if (IsLoading)
         {
             LogUtil.LogWarningFormat("have scene is loading ,can not load scene {0}!", name_);
@@ -60,7 +59,6 @@ public class SceneLoader : MonoSingleton<SceneLoader>
         AutoActive = autoActive_;
         _actived = false;
         SceneLoadLoadingEvent?.Invoke();
-      
         Addressables.LoadSceneAsync(_newScene, LoadSceneMode.Single, AutoActive).Completed += OnSceneLoaded;
     }
 
@@ -76,7 +74,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
 
         _loadScene = handle_.Result;
         LogUtil.Log("SceneLoader OnSceneLoaded load scene 777 " + _loadScene.Scene.name);
-        LogUtil.Log("SceneLoader OnSceneLoaded scene load success 888 888 888 --------------");
+        LogUtil.Log("SceneLoader OnSceneLoaded scene load success 888 888 888 ----------------------------");
      
         if (AutoActive)
         {

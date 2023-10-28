@@ -101,7 +101,6 @@ public class SceneManager : MonoSingleton<SceneManager>
     /// <returns></returns>
     public bool StartChangeScene(string name_, bool autoActive = true)
     {
-        LogUtil.Log("SceneManager StartChangeScene 111");
         if (sceneLoader.IsLoading)
         {
             LogUtil.LogWarningFormat("call attempted to LoadScene {0} while a scene is already in the process of loading; ignoring the load request...", sceneLoader.LoadingSceneName);
@@ -121,7 +120,6 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     IEnumerator StartSceneLoad()
     {
-        LogUtil.Log("SceneManager StartSceneLoad 222");
         yield return null;
         sceneLoader.OnAsyncLoadScene(_newScene, _autoActive);
     }
@@ -156,7 +154,7 @@ public class SceneManager : MonoSingleton<SceneManager>
         _isStart = false;
         SceneMgrPrecentStartEvent?.Invoke();
 
-        LogUtil.Log("SceneManager IenumSceneStart 13 13 13" + SceneStartPaused);
+        LogUtil.Log($"SceneManager IenumSceneStart 13 13 13 {SceneStartPaused} == {_sceneStartWaitCount}");
         while (SceneStartPaused)
         {
             yield return null;

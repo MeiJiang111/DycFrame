@@ -466,6 +466,7 @@ MonoBehaviour:
   loginBtn: {fileID: 2281503933074342746}
   account: {fileID: 1860185541381159054}
   password: {fileID: 5654278488344173640}
+  updataPanel: {fileID: 2848920812796557114, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
 --- !u!1 &5760010776747495681
 GameObject:
   m_ObjectHideFlags: 0
