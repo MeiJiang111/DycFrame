@@ -7,22 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoSingleton<SceneLoader>
 {
-    public Action SceneLoadStartEvent;
-    public Action SceneLoadedEvent;
+    /// <summary>
+    /// 加载过程中
+    /// </summary>
+    public Action SceneLoadLoadingEvent;
+
+    /// <summary>
+    /// 加载成功显示
+    /// </summary>
     public Action SceneLoadActivedEvent;
 
     /// <summary>
     /// 界面加载成功显示
     /// </summary>
     bool _actived;
+   
     string _lastScene = string.Empty;
     string _newScene = string.Empty;
 
-    public bool InLoading { get; private set; }
-    public string CurrScene { get; private set; }
+    public bool IsLoading { get; private set; }
     public bool AutoActive { get; private set; }
-    public bool LevelActived => _actived;
-    public string LoadingLevel => _newScene;
+    public string LoadingSceneName => _newScene;
 
     SceneInstance _loadScene;
     SceneInstance _preScene;
@@ -32,7 +37,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     {
         base.Awake();
        
-        InLoading = false;
+        IsLoading = false;
         _lastScene = string.Empty;
     }
 
@@ -44,24 +49,24 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     public void OnAsyncLoadScene(string name_, bool autoActive_ = true)
     {
         LogUtil.Log("SceneLoader OnAsyncLoadScene 333");
-        if (InLoading)
+        if (IsLoading)
         {
             LogUtil.LogWarningFormat("have scene is loading ,can not load scene {0}!", name_);
             return;
         }
 
-        //SceneLoadStartEvent?.Invoke();
         _newScene = name_;
         _preScene = _loadScene;
         AutoActive = autoActive_;
         _actived = false;
+        SceneLoadLoadingEvent?.Invoke();
+      
         Addressables.LoadSceneAsync(_newScene, LoadSceneMode.Single, AutoActive).Completed += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> handle_)
     {
-        LogUtil.Log("SceneLoader OnSceneLoaded 444");
-        InLoading = false;
+        LogUtil.Log("SceneLoader OnSceneLoaded 666");
         if (handle_.Status != AsyncOperationStatus.Succeeded)
         {
             LogUtil.LogErrorFormat("local scene {0} failed", _newScene);
@@ -70,12 +75,12 @@ public class SceneLoader : MonoSingleton<SceneLoader>
         }
 
         _loadScene = handle_.Result;
-        LogUtil.Log("SceneLoader OnSceneLoaded _loadScene 555 == " + _loadScene.Scene.name);
-      
+        LogUtil.Log("SceneLoader OnSceneLoaded load scene 777 " + _loadScene.Scene.name);
+        LogUtil.Log("SceneLoader OnSceneLoaded scene load success 888 888 888 --------------");
+     
         if (AutoActive)
         {
             _actived = true;
-            CurrScene = _newScene;
             _newScene = string.Empty;
             if (!string.IsNullOrEmpty(_lastScene))
             {
@@ -83,8 +88,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
                 _lastScene = string.Empty;
             }
         }
-        SceneLoadedEvent?.Invoke();
-
+        
         if (AutoActive)
         {
             StartCoroutine(SendActiveSceneEvent());

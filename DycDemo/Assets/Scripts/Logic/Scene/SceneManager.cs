@@ -18,10 +18,10 @@ public class SceneManager : MonoSingleton<SceneManager>
     SceneLoader sceneLoader;
     List<AsyncPrefabData> SceneAsyncPrefabs;
 
-    public Action<string> SceneMgrStartLoadingNewSceneEvent;
-    public Action SceneMgrLoadedEvent;
-    public Action SceneMgrPreStartEvent;
-    public Action SceneMgrStartEvent;
+    public Action<string> SceneMgrFirstLoadSceneEvent;
+    public Action SceneMgrLoadingEvent;
+    public Action SceneMgrPrecentStartEvent;
+    public Action SceneMgrLoadEndEvent;
 
     public bool _isStart;
     string _newScene;
@@ -32,7 +32,7 @@ public class SceneManager : MonoSingleton<SceneManager>
     public bool SceneIsStart => _isStart;
     public string CurScene { get; private set; }
     public bool IsMainLevel => (CurScene == Global.MAIN_SCENE_NAME);
-    public bool LevelStartPaused
+    public bool SceneStartPaused
     {
         get
         {
@@ -52,8 +52,7 @@ public class SceneManager : MonoSingleton<SceneManager>
         base.Awake();
         
         sceneLoader = SceneLoader.Instance;
-        sceneLoader.SceneLoadStartEvent += OnSceneLoadStart;
-        sceneLoader.SceneLoadedEvent += OnSceneLoaded;
+        sceneLoader.SceneLoadLoadingEvent += OnSceneLoading;
         sceneLoader.SceneLoadActivedEvent += OnSceneLoadActived;
         SceneAsyncPrefabs = new List<AsyncPrefabData>();
     }
@@ -62,7 +61,6 @@ public class SceneManager : MonoSingleton<SceneManager>
     {
         foreach (var item in prefabs)
         {
-            LogUtil.Log("new scene prefab name == " + item.Name);
             SceneAsyncPrefabs.Add(new AsyncPrefabData() { name = item.Name, CreatSuccess = success, CreatFaild = faild });
         }
     }
@@ -83,7 +81,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
         if (string.IsNullOrEmpty(asyncPrefabs.name))
         {
-            LogUtil.LogWarningFormat("Creat prefab {0} success but not exists!!!", trueName);
+            LogUtil.LogWarningFormat("creat prefab {0} success but not exists!!!", trueName);
             return;
         }
         asyncPrefabs.CreatSuccess?.Invoke(trueName, obj, parmas);
@@ -91,7 +89,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     void CreatPrefabFaild(string name)
     {
-        LogUtil.LogWarningFormat("creat prefab {0} Faild !!!", name);
+        LogUtil.LogWarningFormat("creat prefab {0} faild !!!", name);
     }
 
     #region 加载场景
@@ -104,9 +102,9 @@ public class SceneManager : MonoSingleton<SceneManager>
     public bool StartChangeScene(string name_, bool autoActive = true)
     {
         LogUtil.Log("SceneManager StartChangeScene 111");
-        if (sceneLoader.InLoading)
+        if (sceneLoader.IsLoading)
         {
-            LogUtil.LogWarningFormat("call attempted to LoadScene {0} while a scene is already in the process of loading; ignoring the load request...", sceneLoader.LoadingLevel);
+            LogUtil.LogWarningFormat("call attempted to LoadScene {0} while a scene is already in the process of loading; ignoring the load request...", sceneLoader.LoadingSceneName);
             return false;
         }
 
@@ -117,14 +115,13 @@ public class SceneManager : MonoSingleton<SceneManager>
         SceneAsyncPrefabs.Clear();
         asyncLoadedNum = 0;
         StopAllCoroutines();
-        StartCoroutine(StartSceneImple());
+        StartCoroutine(StartSceneLoad());
         return true;
     }
 
-    IEnumerator StartSceneImple()
+    IEnumerator StartSceneLoad()
     {
-        LogUtil.Log("SceneManager StartSceneImple 222");
-        //SceneMgrStartLoadingNewSceneEvent?.Invoke(_newScene);
+        LogUtil.Log("SceneManager StartSceneLoad 222");
         yield return null;
         sceneLoader.OnAsyncLoadScene(_newScene, _autoActive);
     }
@@ -132,21 +129,17 @@ public class SceneManager : MonoSingleton<SceneManager>
 
 
     #region SceneLoader 事件执行
-    private void OnSceneLoadStart()
+    private void OnSceneLoading()
     {
-        
-    }
-            
-    private void OnSceneLoaded()
-    {
-        LogUtil.Log("SceneManager OnSceneLoaded Action 666");
-        CurScene = _newScene;
-        SceneMgrLoadedEvent?.Invoke();
+        LogUtil.Log("SceneManager OnSceneLoading Action 444");
+        SceneMgrLoadingEvent?.Invoke();
     }
 
     private void OnSceneLoadActived()
     {
         LogUtil.Log("SceneManager OnSceneLoadActived Action 10 10 10");
+        CurScene = _newScene;
+
         foreach (var item in SceneAsyncPrefabs)
         {
             ResourceManager.Instance.CreatInstanceAsync(item.name, CreatPrefabSuccess, CreatPrefabFaild);
@@ -161,16 +154,16 @@ public class SceneManager : MonoSingleton<SceneManager>
         LogUtil.Log("SceneManager IenumSceneStart Action 11 11 11");
         yield return null;
         _isStart = false;
-        SceneMgrPreStartEvent?.Invoke();
+        SceneMgrPrecentStartEvent?.Invoke();
 
-        while (LevelStartPaused)
+        LogUtil.Log("SceneManager IenumSceneStart 13 13 13" + SceneStartPaused);
+        while (SceneStartPaused)
         {
             yield return null;
         }
 
-        yield return new WaitForEndOfFrame();
         _isStart = true;
-        SceneMgrStartEvent?.Invoke();
+        SceneMgrLoadEndEvent?.Invoke();
     }
     #endregion
 

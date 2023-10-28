@@ -28,8 +28,8 @@ public class AudioSourceManager : MonoSingleton<AudioSourceManager>
         base.Awake();
         audioCache = new Dictionary<string, AudioClip>();
 
-        SceneManager.Instance.SceneMgrStartLoadingNewSceneEvent += OnStartLoadingNewLevel;
-        SceneManager.Instance.SceneMgrPreStartEvent += OnLevelPreStart;
+        SceneManager.Instance.SceneMgrFirstLoadSceneEvent += OnStartLoadingNewLevel;
+        SceneManager.Instance.SceneMgrPrecentStartEvent += OnLevelPreStart;
     }
 
     private void OnStartLoadingNewLevel(string level_)

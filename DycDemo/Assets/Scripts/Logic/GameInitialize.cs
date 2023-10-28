@@ -59,7 +59,6 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
         UIFrame.Instance.RegisterListener();
         LogUtil.Log("GameInitialize Loading Finish !!!");
-       
         yield return new WaitForEndOfFrame();
 
         SceneManager.Instance.StartChangeScene(Global.LOGIN_SCENE_NAME);

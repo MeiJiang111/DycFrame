@@ -59,9 +59,9 @@ public class GameUpdatePanel : MonoBehaviour
                 break;
         }
 
-        if(obj == GameUpdate.UpdateState.Finish)
-        {
-            ResourceManager.Instance.DestroyInstance(this.gameObject);
-        }
+        //if (obj == GameUpdate.UpdateState.Finish)
+        //{
+        //    ResourceManager.Instance.DestroyInstance(this.gameObject);
+        //}
     }
 }

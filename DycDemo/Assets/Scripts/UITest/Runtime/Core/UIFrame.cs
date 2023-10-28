@@ -93,9 +93,10 @@ namespace Feif.UIFramework
         public void RegisterListener()
         {
             var sceneMgr = SceneManager.Instance;
-            sceneMgr.SceneMgrStartLoadingNewSceneEvent += OnLoadNewScene;
-            sceneMgr.SceneMgrLoadedEvent += OnSceneMgrLoaded;
-            sceneMgr.SceneMgrPreStartEvent += OnScenePreStart;
+            sceneMgr.SceneMgrFirstLoadSceneEvent += OnFirstLoadScene;
+            sceneMgr.SceneMgrLoadingEvent += OnSceneMgrLoading;
+            sceneMgr.SceneMgrPrecentStartEvent += OnScenePrecentLoad;
+            sceneMgr.SceneMgrLoadEndEvent += OnSceneLoadEnd;
             Camera = CameraController.Instance.uiCamera;
         }
 
@@ -907,26 +908,33 @@ namespace Feif.UIFramework
         }
 
         #region 場景加载事件
-        private void OnLoadNewScene(string obj)
+        private void OnFirstLoadScene(string obj)
         {
             
         }
 
-        private void OnSceneMgrLoaded()
+        private void OnSceneMgrLoading()
         {
-            LogUtil.Log("UIFrame OnSceneMgrLoaded Action 777");
+            LogUtil.Log("UIFrame OnSceneMgrLoading Action 555");
+            //todo 如果有未关闭的界面 则close
+           
+        }
+
+        private void OnScenePrecentLoad()
+        {
             SceneManager.Instance.PauseLevelStart();
             StartCoroutine(SceneLoadedImple());
+          
         }
 
         IEnumerator SceneLoadedImple()
         {
-            LogUtil.Log("UIFrame SceneLoadedImple  888");
+            LogUtil.Log("UIFrame SceneLoadedImple  999");
             yield return null;
             SceneManager.Instance.ResumeLevelStart();
         }
 
-        private void OnScenePreStart()
+        private void OnSceneLoadEnd()
         {
             CalculateCanvasOffset();
         }

@@ -44,8 +44,8 @@ public class LoginInitialize : MonoBehaviour
     /// <returns></returns>
     private async Task<GameObject> LoadAssetRequest(Type type)
     {
-        Debug.Log("type = " + type);
         var layer = UIFrame.GetLayer(type);
+        Debug.Log("type = " + type);
         Debug.Log("layer = " + layer);
         Debug.Log("type.Name = " + type.Name);
         
@@ -61,10 +61,10 @@ public class LoginInitialize : MonoBehaviour
             handles[type] = handle;
         }
 
-        foreach (var item in handles)
-        {
-            Debug.Log("item = " + item.Key);
-        }
+        //foreach (var item in handles)
+        //{
+        //    Debug.Log("item = " + item.Key);
+        //}
         return handles[type].Result;
     }
 
