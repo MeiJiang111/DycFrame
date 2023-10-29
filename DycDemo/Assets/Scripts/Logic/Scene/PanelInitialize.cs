@@ -10,8 +10,7 @@ using UnityEngine.AddressableAssets;
 
 public class PanelInitialize : MonoSingleton<PanelInitialize>
 {
-    //[SerializeField] private GameObject stuckPanel;
-    //public UIPanelConfigs UIdata;
+    [SerializeField] private GameObject stuckPanel;
     private Dictionary<Type, AsyncOperationHandle<GameObject>> handles = new Dictionary<Type, AsyncOperationHandle<GameObject>>();
 
   
@@ -42,7 +41,7 @@ public class PanelInitialize : MonoSingleton<PanelInitialize>
     {
         var layer = UIFrame.GetLayer(type);
         Debug.Log("type = " + type);
-        Debug.Log("layer = " + layer);
+        //Debug.Log("layer = " + layer);
         Debug.Log("type.Name = " + type.Name);
         
         if (!handles.ContainsKey(type))
@@ -77,12 +76,12 @@ public class PanelInitialize : MonoSingleton<PanelInitialize>
 
     private void OnStuckStart()
     {
-        //stuckPanel.SetActive(true);
+        stuckPanel.SetActive(true);
     }
 
     private void OnStuckEnd()
     {
-        //stuckPanel.SetActive(false);
+        stuckPanel.SetActive(false);
     }
 
     private void OnDestroy()

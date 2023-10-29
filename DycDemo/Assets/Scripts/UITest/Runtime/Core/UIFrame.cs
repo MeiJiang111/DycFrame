@@ -913,13 +913,12 @@ namespace Feif.UIFramework
 
         private void OnSceneMgrLoading()
         {
-            LogUtil.Log("UIFrame OnSceneMgrLoading Action 555");
+            LogUtil.Log("UIFrame OnSceneMgrLoading Action 222");
             //todo 如果有未关闭的界面 则close
         }
 
         private void OnScenePrecentLoad()
         {
-            LogUtil.Log("UIFrame OnScenePrecentLoad Action 12 12 12");
             SceneManager.Instance.PauseLevelStart();
             StartCoroutine(SceneLoadedImple());
         }

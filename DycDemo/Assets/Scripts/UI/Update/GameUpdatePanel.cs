@@ -82,7 +82,7 @@ public class GameUpdatePanel : MonoBehaviour
 
     private void OnOpenLogin()
     {
-        LogUtil.Log("GameUpdatePanel OnClosePanel Action 14 14 14");
+        LogUtil.Log("GameUpdatePanel OnClosePanel Action 10 10 10");
         ResourceManager.Instance.DestroyInstance(this.gameObject);
     }
 }

@@ -64,7 +64,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
 
     private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> handle_)
     {
-        LogUtil.Log("SceneLoader OnSceneLoaded 666");
+        LogUtil.Log("SceneLoader OnSceneLoaded 执行场景加载 333");
         if (handle_.Status != AsyncOperationStatus.Succeeded)
         {
             LogUtil.LogErrorFormat("local scene {0} failed", _newScene);
@@ -73,8 +73,8 @@ public class SceneLoader : MonoSingleton<SceneLoader>
         }
 
         _loadScene = handle_.Result;
-        LogUtil.Log("SceneLoader OnSceneLoaded load scene 777 " + _loadScene.Scene.name);
-        LogUtil.Log("SceneLoader OnSceneLoaded scene load success 888 888 888 ----------------------------");
+        LogUtil.Log("SceneLoader OnSceneLoaded load scene 444 " + _loadScene.Scene.name);
+        LogUtil.Log("SceneLoader OnSceneLoaded scene load success ---------------------------- 场景已加载出来了 555");
      
         if (AutoActive)
         {
@@ -95,7 +95,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
 
     IEnumerator SendActiveSceneEvent()
     {
-        LogUtil.Log("SceneLoader SendActiveSceneEvent 999");
+        LogUtil.Log("SceneLoader SendActiveSceneEvent 666");
         yield return null;
         SceneLoadActivedEvent?.Invoke();
     }

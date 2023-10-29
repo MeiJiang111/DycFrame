@@ -129,13 +129,13 @@ public class SceneManager : MonoSingleton<SceneManager>
     #region SceneLoader 事件执行
     private void OnSceneLoading()
     {
-        LogUtil.Log("SceneManager OnSceneLoading Action 444");
+        LogUtil.Log("SceneManager OnSceneLoading Action 场面加载ing 111");
         SceneMgrLoadingEvent?.Invoke();
     }
 
     private void OnSceneLoadActived()
     {
-        LogUtil.Log("SceneManager OnSceneLoadActived Action 10 10 10");
+        LogUtil.Log("SceneManager OnSceneLoadActived Action 777");
         CurScene = _newScene;
 
         foreach (var item in SceneAsyncPrefabs)
@@ -149,12 +149,12 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     IEnumerator IenumSceneStart()
     {
-        LogUtil.Log("SceneManager IenumSceneStart Action 11 11 11");
+        LogUtil.Log("SceneManager IenumSceneStart Action 888");
         yield return null;
         _isStart = false;
         SceneMgrPrecentStartEvent?.Invoke();
 
-        LogUtil.Log($"SceneManager IenumSceneStart 13 13 13 {SceneStartPaused} == {_sceneStartWaitCount}");
+        LogUtil.Log($"SceneManager IenumSceneStart 999 {SceneStartPaused} == {_sceneStartWaitCount}");
         while (SceneStartPaused)
         {
             yield return null;
