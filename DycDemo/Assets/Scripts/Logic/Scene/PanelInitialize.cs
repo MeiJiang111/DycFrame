@@ -8,21 +8,22 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.AddressableAssets;
 
 
-public class LoginInitialize : MonoBehaviour
+public class PanelInitialize : MonoSingleton<PanelInitialize>
 {
-    [SerializeField] private GameObject stuckPanel;
-
-    public UIPanelConfigs UIdata;
+    //[SerializeField] private GameObject stuckPanel;
+    //public UIPanelConfigs UIdata;
     private Dictionary<Type, AsyncOperationHandle<GameObject>> handles = new Dictionary<Type, AsyncOperationHandle<GameObject>>();
 
-    private void Awake()
+  
+    protected override void Awake()
     {
-        LogUtil.Log("LoginInitialize Awake ---------");
+        base.Awake();
+        LogUtil.Log("PanelInitialize Awake");
     }
 
     void Start()
     {
-        LogUtil.Log("LoginInitialize Start ---------");
+        LogUtil.Log("PanelInitialize Start");
 
         // 注册资源请求释放事件
         UIFrame.OnAssetRequest += LoadAssetRequest;
@@ -37,11 +38,6 @@ public class LoginInitialize : MonoBehaviour
         UIFrame.Show<LoginPanel>(data);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
     private async Task<GameObject> LoadAssetRequest(Type type)
     {
         var layer = UIFrame.GetLayer(type);
@@ -81,16 +77,21 @@ public class LoginInitialize : MonoBehaviour
 
     private void OnStuckStart()
     {
-        stuckPanel.SetActive(true);
+        //stuckPanel.SetActive(true);
     }
 
     private void OnStuckEnd()
     {
-        stuckPanel.SetActive(false);
+        //stuckPanel.SetActive(false);
     }
 
     private void OnDestroy()
     {
         handles.Clear();
+    }
+
+    public void RegisterListener()
+    {
+
     }
 }

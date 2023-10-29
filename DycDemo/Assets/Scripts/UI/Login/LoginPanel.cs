@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Feif.UIFramework;
 using Feif.UI.Data;
-using System;
 
 namespace Feif.UI
 {
@@ -50,7 +49,7 @@ namespace Feif.UI
 
         protected override void OnShow()
         {
-            //Debug.Log("LoginPanel OnShow");
+            Debug.Log("LoginPanel OnShow");
         }
 
         protected override void OnHide()

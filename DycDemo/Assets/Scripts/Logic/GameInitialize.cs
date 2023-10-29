@@ -40,27 +40,20 @@ public class GameInitialize : MonoSingleton<GameInitialize>
 
     public IEnumerator EnterGame()
     {
-        int count = 0;
-        count = prefabList.Count;
         foreach (var item in prefabList)
         {
             ResourceManager.Instance.CreatInstanceAsync(item.name, (obj, parma) =>
             {
                 obj.name = item.name;
                 obj.transform.localPosition = item.pos;
-                count--;
             });
         }
 
-        while (count > 0)
-        {
-            yield return null;
-        }
+        LogUtil.Log("GameInitialize Loading Finish !!!");
 
         UIFrame.Instance.RegisterListener();
-        LogUtil.Log("GameInitialize Loading Finish !!!");
+        PanelInitialize.Instance.RegisterListener();
         yield return new WaitForEndOfFrame();
-
         SceneManager.Instance.StartChangeScene(Global.LOGIN_SCENE_NAME);
     }
 }

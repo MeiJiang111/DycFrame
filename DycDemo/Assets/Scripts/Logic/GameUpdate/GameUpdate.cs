@@ -100,7 +100,6 @@ public class GameUpdate:MonoSingleton<GameUpdate>
 
         CurState = UpdateState.VerifyVersion;
         var handler = Addressables.CheckForCatalogUpdates(false);
-        //LogUtil.Log("GameUpdate StartGameUpdateImple handler == " + handler.Status);
         yield return handler;
 
         if (handler.Status != AsyncOperationStatus.Succeeded ||

@@ -168,6 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asyncPrefabList:
-  - Name: LoginInitialize
+  - Name: LoginBluePrint
     Pos: {x: 0, y: 0, z: 0}
   bgm: 

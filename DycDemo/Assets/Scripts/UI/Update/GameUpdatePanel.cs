@@ -28,7 +28,7 @@ public class GameUpdatePanel : MonoBehaviour
         update.DownLoadProcessChangeEvent += OnDownLoadProcessChanged;
 
         var sceneMgr = SceneManager.Instance;
-        sceneMgr.SceneMgrLoadingEvent = OnOpenLogin;
+        sceneMgr.SceneMgrLoadEndEvent += OnOpenLogin;
     }
 
     private void OnDestroy()
@@ -43,7 +43,7 @@ public class GameUpdatePanel : MonoBehaviour
         var sceneMgr = SceneManager.Instance;
         if (sceneMgr != null)
         {
-            sceneMgr.SceneMgrLoadingEvent -= OnOpenLogin;
+            sceneMgr.SceneMgrLoadEndEvent -= OnOpenLogin;
         }
     }
 
@@ -79,12 +79,6 @@ public class GameUpdatePanel : MonoBehaviour
                 break;
         }
     }
-
-    //private void OnClosePanel()
-    //{
-    //    LogUtil.Log("GameUpdatePanel OnClosePanel Action 14 14 14");
-    //    ResourceManager.Instance.DestroyInstance(this.gameObject);
-    //}
 
     private void OnOpenLogin()
     {

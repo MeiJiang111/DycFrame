@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using Feif.Extensions;
-using static UnityEditor.Progress;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -64,7 +63,7 @@ namespace Feif.UIFramework
         protected override void Awake()
         {
             base.Awake();
-            //LogUtil.Log("UIFrame Awake");
+            LogUtil.Log("UIFrame Awake");
 
             if (canvas == null)
             {
@@ -93,7 +92,6 @@ namespace Feif.UIFramework
         public void RegisterListener()
         {
             var sceneMgr = SceneManager.Instance;
-            sceneMgr.SceneMgrFirstLoadSceneEvent += OnFirstLoadScene;
             sceneMgr.SceneMgrLoadingEvent += OnSceneMgrLoading;
             sceneMgr.SceneMgrPrecentStartEvent += OnScenePrecentLoad;
             sceneMgr.SceneMgrLoadEndEvent += OnSceneLoadEnd;
