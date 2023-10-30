@@ -154,7 +154,7 @@ public class SceneManager : MonoSingleton<SceneManager>
         _isStart = false;
         SceneMgrPrecentStartEvent?.Invoke();
 
-        LogUtil.Log($"SceneManager IenumSceneStart 999 {SceneStartPaused} == {_sceneStartWaitCount}");
+        LogUtil.Log($"SceneManager IenumSceneStart ----  {SceneStartPaused} == {_sceneStartWaitCount} 999");
         while (SceneStartPaused)
         {
             yield return null;

@@ -3,14 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Feif.UIFramework;
 using TMPro;
+using Feif.UI.Data;
 
 namespace Feif.UI 
 {
-    public class LoadingPanelData : UIData
-    {
-
-    }
-
 
     [PanelLayer] 
     public class LoadingPanel : UIComponent<LoadingPanelData>
