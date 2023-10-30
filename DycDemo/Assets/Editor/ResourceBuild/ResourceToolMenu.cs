@@ -18,7 +18,7 @@ public class ResourceToolMenu
     [MenuItem("AB/构建UI面板配置", false, 3)]
     public static void BuildUIPanelConfig()
     {
-        PanelPrefabConfigBuild.Build();
+        //PanelPrefabConfigBuild.Build();
     }
 
     [MenuItem("AB/构建海岛地图(Test)", false, 4)]

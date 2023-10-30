@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceProviders;
 
 
 public class ResourceManager : ASingleton<ResourceManager>
@@ -32,38 +31,6 @@ public class ResourceManager : ASingleton<ResourceManager>
         LogUtil.LogErrorFormat("[Addressable] {0}->{1}", arg1.DebugName, arg2.ToString());
     }
 
-    
-    /// <summary>
-    /// 1.面板的配置
-    /// 2.小岛场景上格子的配置
-    /// 3.小岛场景上建筑物的配置
-    /// </summary>
-    int waiteCount;
-    public void PreLoads()
-    {
-        PreLoadFinish = false;
-        waiteCount = 4;
-        LoadAsset<PanelPrefabConfigs>(Global.PANLE_PREFAB_CONFIG, (config, parma) =>
-        {
-            UIManager.Instance.OnPanleConfigLoaded(config);
-            SubWaiteCount();
-        }, (name_) =>
-        {
-            LogUtil.LogErrorFormat("{0} Load Faild !!!", name_);
-            SubWaiteCount();
-        });
-    }
-   
-    void SubWaiteCount()
-    {
-        waiteCount = Mathf.Max(0, waiteCount - 1);
-        if (waiteCount == 0)
-        {
-            PreLoadFinish = true;
-        } 
-    }
-    
-    
     public void CreatInstanceAsync(string name_, Vector3 pos_, Quaternion rotation, Transform parent = null, Action<GameObject, object> success_ = null, Action<string, object> faild_ = null, object param_ = null)
     {
         Addressables.InstantiateAsync(name_, pos_, rotation, parent).Completed += (handle) =>

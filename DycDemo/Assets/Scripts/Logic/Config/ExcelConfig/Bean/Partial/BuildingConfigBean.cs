@@ -8,5 +8,5 @@ public partial class BuildingConfigBean
     public string EntityName => string.Format("E_{0}", ResourceName);
     public List<NeedItemData> needItems;
 
-    public BuildType Type => (BuildType)BuildingType;
+    //public BuildType Type => (BuildType)BuildingType;
 }
