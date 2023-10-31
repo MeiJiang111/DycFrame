@@ -36,8 +36,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void OnNetDroped()
     {
-        var loginMgr = GetManager<LoginManager>();
-        loginMgr.ReTryLogin();
+        //var loginMgr = GetManager<LoginManager>();
+        //loginMgr.ReTryLogin();
     }
 
     string curLevelName;

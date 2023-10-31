@@ -1,6 +1,6 @@
 ﻿
 using System.Collections.Generic;
-
+using UnityEngine;
 
 public class EditorPath
 {
@@ -30,4 +30,11 @@ public class EditorPath
 
     public const string BUILD_PATH = BUILD_RES_ROOT + "Prefabs/Build/";
     public const string BUILD_OBSTACLE_PATH = BUILD_RES_ROOT + "Prefabs/Environment/Obstacle/";
+
+
+    ///Excel Test
+    public static string BinaryFile_Path = Application.streamingAssetsPath + "/ExcelBinaryFile/";
+    public static string fieldClassPath = Application.dataPath + "/Scripts/Logic/ExcelData/fieldClass/";
+    public static string dicClassPath = Application.dataPath + "/Scripts/Logic/ExcelData/dicClass/";
+    public static string ExcelFilePath = Application.dataPath + "/Editor/Excel/ExcelFile/";
 }

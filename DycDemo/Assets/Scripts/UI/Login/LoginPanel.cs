@@ -17,7 +17,7 @@ namespace Feif.UI
         public Button loginBtn;
         public InputField account;
         public InputField password;
-        public GameObject updataPanel;
+       
         private void Awake()
         {
             Debug.Log("LoginPanel Awake");
@@ -31,19 +31,17 @@ namespace Feif.UI
 
         protected override void OnBind()
         {
-            //Debug.Log("LoginPanel OnBind");
             loginBtn.onClick.AddListener(LoginBtnClick);
         }
 
         protected override Task OnRefresh()
         {
-            //Debug.Log("LoginPanel OnRefresh");
             return Task.CompletedTask;
         }
 
         protected override void OnUnbind()
         {
-            //Debug.Log("LoginPanel OnUnbind");
+           
             loginBtn.onClick.RemoveListener(LoginBtnClick);
         }
 
@@ -54,12 +52,12 @@ namespace Feif.UI
 
         protected override void OnHide()
         {
-            //Debug.Log("LoginPanel OnHide");
+            
         }
 
         protected override void OnDied()
         {
-            //Debug.Log("LoginPanel OnDied");
+
         }
 
         private void LoginBtnClick()
