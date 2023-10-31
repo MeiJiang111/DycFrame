@@ -5,7 +5,6 @@ public class ResourceToolMenu
     [MenuItem("AB/生成Excel配置", false, 1)]
     public static void BuildExcelConfig()
     {
-        CreateConfigRes.CreateRes();
         AssetDatabase.Refresh();
     }
 

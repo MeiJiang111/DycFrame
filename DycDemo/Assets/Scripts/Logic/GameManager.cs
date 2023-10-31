@@ -10,9 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     public int SecondForMinute = 1;
     public bool ASlash = true;
     Dictionary<Type, GameSystem> systemManagers;
-    GlobalConfigBean globalSetting;
-    public GlobalConfigBean GlobalSetting => globalSetting;
-
+   
 
     protected override void Awake()
     {
@@ -23,41 +21,23 @@ public class GameManager : MonoSingleton<GameManager>
         systemManagers = new Dictionary<Type, GameSystem>();
         AddAllManagers();
        
-        //LevelManager.Instance.LevelPreStartEvent += OnLevelPreStart;
-        //NetWorkManager.Instance.NetDropedEvent += OnNetDroped;
-
         TimerEventMgr.Instance.Add(1, Tick, -1);
     }
 
     private void Tick()
     {
-        //CurTimestamp = TimeManager.Instance.Timestamp;
+       
     }
 
-    private void OnNetDroped()
-    {
-        //var loginMgr = GetManager<LoginManager>();
-        //loginMgr.ReTryLogin();
-    }
+  
 
     string curLevelName;
-    private void OnLevelPreStart()
-    {
-        //curLevelName = LevelManager.Instance.CurLevel;
-        //if (curLevelName == Global.MAIN_LEVEL_NAME)
-        //{
-        //    EffectManager.Instance.PreLoadeEffect();
-        //}
-    }
+   
 
 
     public void OnGameInit()
     {
-        globalSetting = ConfigManager.Instance.GetContainer<GlobalConfigContainer>().GetDataBean(1);
-        foreach (var mgr in systemManagers)
-        {
-            mgr.Value.Init();
-        }
+      
     }
 
     public void GameStart()
@@ -76,7 +56,6 @@ public class GameManager : MonoSingleton<GameManager>
             mgr.Value.OnLogin(init_);
         }
     }
-
 
 
     public void OnLogout()
@@ -115,6 +94,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
         return null;
     }
+
     void AddAllManagers()
     {
         foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
