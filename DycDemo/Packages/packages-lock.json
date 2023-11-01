@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.code-philosophy.luban": {
-      "version": "file:E:/Tools/luban/luban_unity-main",
+      "version": "file:luban_unity-main",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.addressables": {

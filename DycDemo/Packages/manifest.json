@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.code-philosophy.luban": "file:E:/Tools/luban/luban_unity-main",
     "com.unity.addressables": "1.19.19",
     "com.unity.cinemachine": "2.8.9",
     "com.unity.collab-proxy": "2.0.7",
