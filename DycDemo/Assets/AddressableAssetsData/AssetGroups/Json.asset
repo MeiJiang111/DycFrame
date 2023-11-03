@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Config
+  m_Name: Json
   m_EditorClassIdentifier: 
-  m_GroupName: Config
+  m_GroupName: Json
   m_Data:
     m_SerializedData: []
-  m_GUID: cfae590c580779c4294155d9b9c26c04
+  m_GUID: 63cd0115f38691a44bd7fc37796bbbca
   m_SerializeEntries:
-  - m_GUID: e518fa340e248b849b489a593cf4e17b
-    m_Address: PanelPrefabsConfig
+  - m_GUID: 0fcec4dc56a7d3f45b327ff0fbc5e5fd
+    m_Address: item_tbitem
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - Config_Scripteobject
+    m_SerializedLabels: []
+  - m_GUID: 772c84feca3568044905fafe86e0e6fd
+    m_Address: players_tbplayers
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 60a44b125473b4c4aafd7d877ee6a565, type: 2}
-    - {fileID: 11400000, guid: a4ddb603c659e0349914cce6832bdf37, type: 2}
+    - {fileID: 11400000, guid: 6cf1b2321f88cf44295a87f447cf0cfc, type: 2}
+    - {fileID: 11400000, guid: d9ef99a8a46390d4a83594555a12a6c3, type: 2}

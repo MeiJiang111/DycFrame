@@ -50,7 +50,7 @@ public class GameInitialize : MonoSingleton<GameInitialize>
         }
 
         LogUtil.Log("GameInitialize Loading Finish !!!");
-        //ConfigManager.Instance.Init();
+        ConfigManager.Instance.Init();
         yield return new WaitForEndOfFrame();
 
         UIFrame.Instance.RegisterListener();

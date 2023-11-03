@@ -63,8 +63,8 @@ namespace Feif.UI
 
         private void InitShow()
         {
-            //textPlayerName.text = ConfigManager.Instance.tables.TbPlayers.Get(10000).Name;
-            //textlevel.text = ConfigManager.Instance.tables.TbPlayers.Get(10000).Level.ToString();
+            textPlayerName.text = ConfigManager.Instance.tables.TbPlayers.Get(10000).Name;
+            textlevel.text = ConfigManager.Instance.tables.TbPlayers.Get(10000).Level.ToString();
         }
     }
 }

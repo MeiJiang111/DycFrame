@@ -1,17 +1,17 @@
-//using cfg;
+using cfg;
 
 
-//public class ConfigManager : MonoSingleton<ConfigManager>
-//{
-//    public Tables tables;
+public class ConfigManager : MonoSingleton<ConfigManager>
+{
+    public Tables tables;
 
-//    public void GetTable()
-//    {
-//        tables = ConfigGlobal.Table;
-//    }
+    public void GetTable()
+    {
+        tables = ConfigGlobal.Table;
+    }
 
-//    public void Init()
-//    {
-//        GetTable();
-//    }
-//}
+    public void Init()
+    {
+        GetTable();
+    }
+}
