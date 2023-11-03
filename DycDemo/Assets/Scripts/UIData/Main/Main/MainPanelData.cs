@@ -7,7 +7,7 @@ namespace Feif.UI.Data
 {
     public class MainPanelData : UIData
     {
-       
+
     }
 }
 

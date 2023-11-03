@@ -22,6 +22,14 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config_Scripteobject
+  - m_GUID: 8d674022d5c91c746b1388653066a468
+    m_Address: item_tbitem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fad42d7c013fcac46bfb7b29c801709b
+    m_Address: players_tbplayers
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 57bdce6b6e95f1b43bdf98f605dced20, type: 2}
   m_SchemaSet:
