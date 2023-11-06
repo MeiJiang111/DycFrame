@@ -6,6 +6,7 @@ using Feif.UIFramework;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 namespace Feif.UI
 {
@@ -15,8 +16,14 @@ namespace Feif.UI
         public Button btnShop;
         public TextMeshProUGUI textPlayerName;
         public TextMeshProUGUI textlevel;
+        public TextMeshProUGUI textSlider;
+        public Slider slider;
+        public Text textGold;
+        public Text textGem;
+        public Button btnAddGold;
+        public Button btnAddGem;
+       
 
-     
         protected override Task OnCreate()
         {
             LogUtil.Log("MainPanel OnCreate");
@@ -26,16 +33,19 @@ namespace Feif.UI
         protected override void OnBind()
         {
             btnShop.onClick.AddListener(OnOpenShop);
+            btnAddGold.onClick.AddListener(OnAddGold);
         }
 
         protected override Task OnRefresh()
         {
+            textGold.text = this.Data.GetGold().ToString(); ;
             return Task.CompletedTask;
         }
 
         protected override void OnUnbind()
         {
             btnShop.onClick.RemoveListener(OnOpenShop);
+            btnAddGold.onClick.RemoveListener(OnAddGold);
         }
 
         protected override void OnShow()
@@ -52,7 +62,6 @@ namespace Feif.UI
         protected override void OnDied()
         {
 
-
         }
 
         private void OnOpenShop()
@@ -63,8 +72,23 @@ namespace Feif.UI
 
         private void InitShow()
         {
-            textPlayerName.text = ConfigManager.Instance.tables.TbPlayers.Get(10000).Name;
-            textlevel.text = ConfigManager.Instance.tables.TbPlayers.Get(10000).Level.ToString();
+            textPlayerName.text = this.Data.playerData.Name;
+            textlevel.text = this.Data.playerData.Level.ToString();
+           
+            string val = $"{this.Data.playerData.AttrHp}/100  HP";
+            textSlider.text = val;
+            slider.value = this.Data.playerData.AttrHp;
+
+            //textGold.text = this.Data.playerData.Gold.ToString();
+            textGem.text = this.Data.playerData.Gem.ToString();
+        }
+
+        private void OnAddGold()
+        {
+            UIFrame.Refresh(this, new MainPanelData()
+            {
+                goldNum = this.Data.AddGold()
+            });
         }
     }
 }

@@ -480,7 +480,7 @@ namespace Feif.UIFramework
 
         private static async Task<GameObject> RequestInstance(Type type, UIData data)
         {
-            LogUtil.Log($"RequestInstance  type = {type} data = {data}");
+            //LogUtil.Log($"RequestInstance  type = {type} data = {data}");
  
             if (type == null)
             {
@@ -913,7 +913,6 @@ namespace Feif.UIFramework
 
         private void OnSceneMgrLoading()
         {
-            LogUtil.Log("UIFrame OnSceneMgrLoading Action 222");
             //todo 如果有未关闭的界面 则close
         }
 

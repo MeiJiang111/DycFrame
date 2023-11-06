@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 1855317998786170657}
   - component: {fileID: 6242246710827826921}
   m_Layer: 0
-  m_Name: Button_AddGem
+  m_Name: btn_add_gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,6 +1921,12 @@ MonoBehaviour:
   btnShop: {fileID: 7986997624452327001}
   textPlayerName: {fileID: 4481125004182096104}
   textlevel: {fileID: 6840642050682053192}
+  textSlider: {fileID: 4972002760460854300}
+  slider: {fileID: 7693564218547472557}
+  textGold: {fileID: 3903943566440696508}
+  textGem: {fileID: 5192373235941926908}
+  btnAddGold: {fileID: 4021525083856995999}
+  btnAddGem: {fileID: 1855317998786170657}
 --- !u!1 &4228248147691085726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1941,7 @@ GameObject:
   - component: {fileID: 4021525083856995999}
   - component: {fileID: 7175128248251074359}
   m_Layer: 0
-  m_Name: Button_AddGold
+  m_Name: btn_add_gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2076,7 +2082,7 @@ GameObject:
   - component: {fileID: 7309273986196793096}
   - component: {fileID: 5192373235941926908}
   m_Layer: 0
-  m_Name: GemText
+  m_Name: text_gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2143,7 +2149,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 111
+  m_Text: 
 --- !u!1 &4627215300559099147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,7 +2683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3020,7 +3026,7 @@ GameObject:
   - component: {fileID: 2808009467689993033}
   - component: {fileID: 3903943566440696508}
   m_Layer: 0
-  m_Name: GoldText
+  m_Name: text_gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3087,7 +3093,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 111
+  m_Text: 
 --- !u!1 &6383851228759640565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,7 +3421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3917,7 +3923,7 @@ GameObject:
   - component: {fileID: 8796066437691440203}
   - component: {fileID: 4972002760460854300}
   m_Layer: 0
-  m_Name: text_name
+  m_Name: text_slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3938,10 +3944,10 @@ RectTransform:
   m_Father: {fileID: 4253171433491358074}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 93.52026}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8796066437691440203
 CanvasRenderer:
@@ -3971,7 +3977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 111
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e036b2029a85334ba2fff0ce7e94bdb, type: 2}
   m_sharedMaterial: {fileID: -5583246235202107399, guid: 3e036b2029a85334ba2fff0ce7e94bdb, type: 2}
@@ -3998,8 +4004,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4182,7 +4188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 111
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e036b2029a85334ba2fff0ce7e94bdb, type: 2}
   m_sharedMaterial: {fileID: -5583246235202107399, guid: 3e036b2029a85334ba2fff0ce7e94bdb, type: 2}
@@ -4480,9 +4486,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

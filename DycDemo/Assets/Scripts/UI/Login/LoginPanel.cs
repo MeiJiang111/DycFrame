@@ -20,12 +20,12 @@ namespace Feif.UI
        
         private void Awake()
         {
-            Debug.Log("LoginPanel Awake");
+            //Debug.Log("LoginPanel Awake");
         }
 
         protected override Task OnCreate()
         {
-            Debug.Log("LoginPanel OnCreate");
+            //Debug.Log("LoginPanel OnCreate");
             return Task.CompletedTask;
         }
 
@@ -47,7 +47,7 @@ namespace Feif.UI
 
         protected override void OnShow()
         {
-            Debug.Log("LoginPanel OnShow");
+            //Debug.Log("LoginPanel OnShow");
         }
 
         protected override void OnHide()

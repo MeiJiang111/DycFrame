@@ -129,7 +129,7 @@ public class SceneManager : MonoSingleton<SceneManager>
     #region SceneLoader 事件执行
     private void OnSceneLoading()
     {
-        LogUtil.Log("SceneManager OnSceneLoading Action 场面加载ing 111");
+        //LogUtil.Log("SceneManager OnSceneLoading Action 场面加载ing 111");
         SceneMgrLoadingEvent?.Invoke();
     }
 
