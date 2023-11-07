@@ -22,6 +22,7 @@ namespace Feif.UI
         public Text textGem;
         public Button btnAddGold;
         public Button btnAddGem;
+        public Button btnTest1Panel;
        
 
         protected override Task OnCreate()
@@ -34,6 +35,7 @@ namespace Feif.UI
         {
             btnShop.onClick.AddListener(OnOpenShop);
             btnAddGold.onClick.AddListener(OnAddGold);
+            btnTest1Panel.onClick.AddListener(OnOpenTest1);
         }
 
         protected override Task OnRefresh()
@@ -46,6 +48,7 @@ namespace Feif.UI
         {
             btnShop.onClick.RemoveListener(OnOpenShop);
             btnAddGold.onClick.RemoveListener(OnAddGold);
+            btnTest1Panel.onClick.RemoveListener(OnOpenTest1);
         }
 
         protected override void OnShow()
@@ -89,6 +92,13 @@ namespace Feif.UI
             {
                 goldNum = this.Data.AddGold()
             });
+        }
+
+        private void OnOpenTest1()
+        {
+            LogUtil.Log("OnOpenTest1");
+            var data = new Test1Data();
+            UIFrame.Show<Test1Panel>(data);
         }
     }
 }

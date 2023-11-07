@@ -323,6 +323,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpdatePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3835430998051674937, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -21.300049
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111987187617170088, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.4101562
+      objectReference: {fileID: 0}
     - target: {fileID: 7504173478453056452, guid: 27b665df725fd724a8a21922ae5221df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -1927,6 +1927,7 @@ MonoBehaviour:
   textGem: {fileID: 5192373235941926908}
   btnAddGold: {fileID: 4021525083856995999}
   btnAddGem: {fileID: 1855317998786170657}
+  btnTest1Panel: {fileID: 6131174540265870925}
 --- !u!1 &4228248147691085726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,7 +3136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1638348753339978177
@@ -4609,7 +4610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7492276010595549955

@@ -40,7 +40,7 @@ public class PanelInitialize : MonoSingleton<PanelInitialize>
     private async Task<GameObject> LoadAssetRequest(Type type)
     {
         var layer = UIFrame.GetLayer(type);
-        Debug.Log("type = " + type);
+        //Debug.Log("type = " + type);
         //Debug.Log("layer = " + layer);
         Debug.Log("type.Name = " + type.Name);
         
