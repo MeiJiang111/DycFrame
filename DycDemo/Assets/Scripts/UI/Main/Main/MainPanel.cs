@@ -96,7 +96,6 @@ namespace Feif.UI
 
         private void OnOpenTest1()
         {
-            LogUtil.Log("OnOpenTest1");
             var data = new Test1Data();
             UIFrame.Show<Test1Panel>(data);
         }

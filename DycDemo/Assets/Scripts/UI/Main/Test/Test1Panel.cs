@@ -22,6 +22,7 @@ namespace Feif.UI
         public Button btnRight;
         public GameObject optionPrefab;
         public Transform optionGroup;
+        public ToggleGroup toggleGroup;
       
         Transform[] options;
         TextMeshProUGUI[] textNameList = new TextMeshProUGUI[6];
@@ -30,10 +31,10 @@ namespace Feif.UI
         public int optionNum;
         float halfNum;
 
-        Dictionary<Transform, Vector2> optionPDic = new Dictionary<Transform, Vector2>();
-        Dictionary<Transform, int> optionSDic = new Dictionary<Transform, int>();
+        Dictionary<Transform, Vector2> optionPosDic = new Dictionary<Transform, Vector2>();
+        Dictionary<Transform, int> optionIndexDic = new Dictionary<Transform, int>();
         Vector3 center = Vector3.zero;
-        float R = 500f;
+        const float R = 500f;
 
         [Range(1f, 10f)]
         public float speed;
@@ -63,8 +64,8 @@ namespace Feif.UI
                 options[i] = optionGroup.GetChild(i);
             }
 
-            InitPos();
-            InitSibling();
+            //InitPos();
+            //InitSibling();
             return Task.CompletedTask;
         }
 
@@ -112,7 +113,7 @@ namespace Feif.UI
 
                 options[i].localPosition = new Vector3(x, y, z);
                 //LogUtil.Log($"x = {x}  y = {y} z = {z}  temp = {options[i].localPosition}");
-                optionPDic.Add(options[i], options[i].localPosition);
+                optionPosDic.Add(options[i], options[i].localPosition);
             }
         }
 
@@ -139,18 +140,18 @@ namespace Feif.UI
 
             for (int i = 0; i < optionNum; i++)
             {
-                optionSDic.Add(options[i], options[i].GetSiblingIndex());
+                optionIndexDic.Add(options[i], options[i].GetSiblingIndex());
             }
         }
 
         private void OnBtnMoveLeft()
         {
-            StartCoroutine(MoveLeft());
+            //StartCoroutine(MoveLeft());
         }
 
         private void OnBtnMoveRight()
         {
-            StartCoroutine(MoveRight());
+            //StartCoroutine(MoveRight());
         }
 
         IEnumerator MoveLeft()
@@ -160,8 +161,8 @@ namespace Feif.UI
                 yield return currentPie;
             }
 
-            Vector3 p = optionPDic[options[0]];
-            int s = optionSDic[options[0]];
+            Vector3 p = optionPosDic[options[0]];
+            int s = optionIndexDic[options[0]];
             Vector3 targetP;
 
             for (int i = 0; i < optionNum; i++)
@@ -169,14 +170,14 @@ namespace Feif.UI
                 if(i == (optionNum - 1))
                 {
                     targetP = p;
-                    optionSDic[options[i]] = s;
+                    optionIndexDic[options[i]] = s;
                 }
                 else
                 {
                     targetP = options[(i + 1) % optionNum].localPosition;
-                    optionSDic[options[i]] = optionSDic[options[(i + 1) % optionNum]];
+                    optionIndexDic[options[i]] = optionIndexDic[options[(i + 1) % optionNum]];
                 }
-                options[i].SetSiblingIndex(optionSDic[options[i]]);
+                options[i].SetSiblingIndex(optionIndexDic[options[i]]);
                 currentPie = StartCoroutine(MoveToTarget(options[i],targetP));
             }
 
@@ -190,8 +191,8 @@ namespace Feif.UI
                 yield return currentPie;
             }
 
-            Vector3 p = optionPDic[options[optionNum - 1]];
-            int s = optionSDic[options[optionNum - 1]];
+            Vector3 p = optionPosDic[options[optionNum - 1]];
+            int s = optionIndexDic[options[optionNum - 1]];
             Vector3 targetP;
 
             for (int i = optionNum - 1; i >= 0; i--)
@@ -199,15 +200,15 @@ namespace Feif.UI
                 if(i == 0)
                 {
                     targetP = p;
-                    optionSDic[options[i]] = s;
+                    optionIndexDic[options[i]] = s;
                 }
                 else
                 {
                     targetP = options[(i - 1) % optionNum].localPosition;
-                    optionSDic[options[i]] = optionSDic[options[(i - 1)% optionNum]];
+                    optionIndexDic[options[i]] = optionIndexDic[options[(i - 1)% optionNum]];
                 }
 
-                options[i].SetSiblingIndex(optionSDic[options[i]]);
+                options[i].SetSiblingIndex(optionIndexDic[options[i]]);
                 currentPie = StartCoroutine(MoveToTarget(options[i], targetP));
             }
             yield return null;
@@ -222,7 +223,7 @@ namespace Feif.UI
                 yield return null;
             }
 
-            optionPDic[tf] = target;
+            optionPosDic[tf] = target;
             yield return null;
         }
 
